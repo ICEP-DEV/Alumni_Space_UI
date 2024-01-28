@@ -1,0 +1,32 @@
+<div class="card">
+    <button class="button" routerLink="/add-employment">Add</button>
+    <div class="container-fluid">
+        <div id="alumni">
+            <table id="customers">
+                <thead>
+                    <th>Comapany Names</th>
+                    <th>Role</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Months</th>
+                    <th>Edit</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let detail of alumni_details" class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content"
+                        data-aos="fade-right" data-aos-delay="100">
+                        <td>{{detail.company_name}}</td>
+                        <td>{{detail.company_role}}</td>
+                        <td>{{detail.start_date}}</td>
+                        <td *ngIf="detail.end_date != null">{{detail.end_date}}</td>
+                        <td *ngIf="detail.end_date != null">{{detail.months}}</td>
+
+                        <td *ngIf="detail.end_date == null">Present</td>
+                        <td *ngIf="detail.end_date == null">{{detail.months_present}}</td>
+
+                        
+                        <td><button class="btn btn-primary" (click)="edit_work(detail)">Edit</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>

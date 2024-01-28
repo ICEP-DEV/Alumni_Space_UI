@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlumniService } from '../../../services/alumni/alumni.service'
+import { profilesUrl } from 'config';
+
 @Component({
   selector: 'app-all-alumnus',
   templateUrl: './all-alumnus.component.html',
@@ -10,59 +12,10 @@ export class AllAlumnusComponent {
 
   constructor(private _router: Router, private alumniService: AlumniService) { }
 
-  Alumnus: any /*[{
-    name: "Manasoe DJ", company: "ICEP", role: "Developer", image: "../../assets/profilejpg.jpg", privious: [{
-      company: "TUT", role: "Lecturer",
-      startDate: "2017-Mar", endDate: "2017-Dec"
-    }, {
-      company: "MLAB", role: "Web and Developer",
-      startDate: "2018-Jan", endDate: "2019-Dec"
-    }, {
-      company: "Sasol", role: "Patrol Attendance",
-      startDate: "2019-Feb", endDate: "2021-Nov"
-    }]
-  },
-
-  {
-    name: "Maluleke T", company: "ICEP", role: "BA", image: "../../assets/profile2png.png", privious: [{
-      company: "TUT", role: "Lecturer",
-      startDate: "2017-Mar", endDate: "2017-Dec"
-    }, {
-      company: "MLAB", role: "Web and Developer",
-      startDate: "2018-Jan", endDate: "2019-Dec"
-    }, {
-      company: "Sasol", role: "Patrol Attendance",
-      startDate: "2019-Feb", endDate: "2021-Nov"
-    }]
-  },
-
-  {
-    name: "Makena LB", company: "Spar", role: "Cashier", image: "../../assets/profile3png.png", privious: [{
-      company: "TUT", role: "Lecturer",
-      startDate: "2017-Mar", endDate: "2017-Dec"
-    }, {
-      company: "MLAB", role: "Web and Developer",
-      startDate: "2018-Jan", endDate: "2019-Dec"
-    }, {
-      company: "Sasol", role: "Patrol Attendance",
-      startDate: "2019-Feb", endDate: "2021-Nov"
-    }]
-  },
-
-  {
-    name: "Malebane TK", company: "ICEP", role: "Tester", image: "../../assets/profilejpg.jpg", privious: [{
-      company: "TUT", role: "Lecturer",
-      startDate: "2017-Mar", endDate: "2017-Dec"
-    }, {
-      company: "MLAB", role: "Web and Developer",
-      startDate: "2018-Jan", endDate: "2019-Dec"
-    }, {
-      company: "Sasol", role: "Patrol Attendance",
-      startDate: "2019-Feb", endDate: "2021-Nov"
-    }]
-  }]*/
+  Alumnus: any 
   message = ""
   Alumni_Temp: any
+  profileUrl = `${profilesUrl}`
   ngOnInit() {
     this.message = ""
     this.alumniService.getAllAlumni().subscribe((respond) => {

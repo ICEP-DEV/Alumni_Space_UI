@@ -3,7 +3,7 @@
     <div class="container-fluid">
         <div id="alumni">
             <h1>Name: {{alumni.name}}</h1>
-            <span *ngIf="alumni.employment_status != 'UnEmployed'">
+            <span *ngIf="alumni.employment_status.toLocaleLowerCase() != 'Unemployed'.toLocaleLowerCase()">
                 <h1>Comapany: {{alumni.company}}</h1>
                 <h1>Role :{{alumni.position}}</h1>
             </span>

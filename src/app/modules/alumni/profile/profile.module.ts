@@ -8,12 +8,18 @@ import { ViewProfileComponent } from './view-profile/view-profile.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 //import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { WorkExperienceComponent } from './work-experience/work-experience.component';
+import { AddWorkComponent } from './add-work/add-work.component';
+import { EditWorkComponent } from './edit-work/edit-work.component';
 
 
 @NgModule({
   declarations: [
     ViewProfileComponent,
-    EditProfileComponent
+    EditProfileComponent,
+    WorkExperienceComponent,
+    AddWorkComponent,
+    EditWorkComponent
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="group-form">
+        <label>Company name</label>
+        <input type="text" class="form-control" [(ngModel)]="work.company_name" />
+    </div>
+    <div class="group-form">
+        <label>Company Role</label>
+        <input type="text" class="form-control" [(ngModel)]="work.company_role" />
+    </div>
+    <div class="group-form">
+        <label>Start Date</label>
+        <input type="date" class="form-control" [(ngModel)]="work.start_date"/>
+    </div>
+    <div class="group-form">
+        <label>End date</label>
+        <input type="date" class="form-control" [(ngModel)]="work.end_date"/>
+    </div>
+
+    <div class="group-form">
+        <input type="button" class="form-control btn" value="Edit" (click)="edit_work()"/>
+    </div>
+</div>

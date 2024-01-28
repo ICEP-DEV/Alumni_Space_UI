@@ -1,0 +1,14 @@
+.container{
+    width: 80%;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.group-form{
+    margin-top: 10px;
+}
+
+.btn{
+    background-color: black;
+    color: white;
+}

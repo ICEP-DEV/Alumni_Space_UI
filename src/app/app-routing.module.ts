@@ -13,6 +13,7 @@ import {SuccessPasswordChangeComponent} from './components/auth/success-password
 import { RegisterComponent } from './components/register/register.component';
 import { ApplyPageComponent } from './modules/alumni/jobs/apply-page/apply-page.component';
 import { AlumniDetailsComponent } from './modules/admin/alumni-details/alumni-details.component';
+import { AddWorkComponent } from './modules/alumni/profile/add-work/add-work.component';
 
 
 const routes: Routes = [
@@ -45,6 +46,9 @@ const routes: Routes = [
   {path: 'apply-page', component: ApplyPageComponent},
   
   {path: 'alumni-details', component: AlumniDetailsComponent},
+  {path: 'add-employment', component: AddWorkComponent},
+
+  
 ];
 
 @NgModule({
