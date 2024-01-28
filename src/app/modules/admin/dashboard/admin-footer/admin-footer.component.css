@@ -1,0 +1,29 @@
+.footer {
+    position: bottom;
+    bottom: 0;
+    width: auto;
+    height: auto;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    /* margin-bottom: 30px; */
+    padding-bottom: 20px;
+    box-shadow: 2px 3px 2px 3px blue;
+  }
+  .footer p{
+     font-size: 20px;
+     padding: 20px;
+     color:#fff
+  }
+  .social-icon {
+    color: #fff;
+    font-size: 24px;
+    margin: 0 10px;
+  }
+  .text-muted{
+     color: #fff;
+  }

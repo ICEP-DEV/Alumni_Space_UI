@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website for in-service training and current TUT vacancies</title>
+    <link rel="stylesheet" href="adminlogCss.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+</head>
+<body>
+    <header>
+        <h2 class="logo">TUT_ALUMNI_SPACE</h2>
+        <nav class="navigation">
+            <a href="home.html">Home</a>
+            <a href="About.html">About</a>
+            <a href="Services.html">Services</a>
+            <a href="contacts.html">Contact</a>
+          <!-- <button class="btnLogin-popup">Login</button> -->
+        </nav>
+      </nav>
+      <div class="dropdown">
+        <button class="btnLogin-popup">Login</button>
+       <!-- <button class="dropbtn">Select User Type</button> -->
+        <div class="dropdown-content">
+            <a href="login.component.html" id="student">Student</a>
+            <a href="#" id="admin">Admin</a>
+        </div>
+      </div>
+    </header>
+
+    <div class="wrapper">
+        <i class="fa fa-times" aria-hidden="true"></i>
+        <div class="form-box login">
+            <h2>Login</h2>
+            <form (ngSubmit)="onLogin()">
+                <div class="input-box">
+                    <input type="email" id="email" [(ngModel)]="email" name="email" required>
+                    <label>Staff Email</label>
+                </div>
+                <div class="input-box">
+                    <input type="password" id="password" [(ngModel)]="password" name="password" required>
+                    <label>Password</label>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox"> Remember me</label>
+                    <a href="forgot-password.html">Forgot Password?</a>
+                </div>
+                <button class="btn" type="submit">Login</button>
+                <div class="login-register">
+                   <!--    <p>Don't have an account?<a href="#" class="Register-link">Register</a></p>  -->
+                </div>
+            </form>
+        </div>
+       <!-- <div class="form-box register">
+            <h2>Registration</h2>
+            <form (ngSubmit)="onSubmit()">
+              <div class="input-box">
+                <input type="text" required [(ngModel)]="fullname" name="fullname">
+                <label>Full Name</label>
+              </div>
+              <div class="input-box">
+                <input type="email" required [(ngModel)]="email" name="email">
+                <label>Staff Email</label>
+              </div>
+              <div class="input-box">
+                <input type="password" required [(ngModel)]="password" name="password">
+                <label>Password</label>
+              </div>
+              <div class="remember-forgot">
+                <label><input type="checkbox" name="agreeToTerms"> Agree to terms and conditions</label>
+              </div>
+              <button class="btn" type="submit">Register</button>
+              <div class="login-register">
+                <p>Already have an account? <a href="#" class="login-link">Login</a></p>
+              </div>
+            </form>
+          </div>
+          
+    </div>-->
+
+    <script src="./script.js"></script>
+    <script type ="module" src="https://unpkg.com/ionicons@s5.2/dist/ionicons.esm.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!-- <p>track-alumni works!</p> -->
+<app-navbar></app-navbar>
+<div class="card">
+  <div class="container-fluid">
+
+    <div class="header">
+      <h1>Alumni Statistics</h1>
+    </div>
+
+    <div class="alumni-toggler">
+      <button type="button" class="btn btn-primary" (click)="toggleAlumniStatsChart()">
+        {{ showAlumniStats ? 'Hide Alumni Stats' : 'View Alumni Stats' }}
+      </button>
+    </div>
+    <div *ngIf="showAlumniStats" class="top-content">
+      <app-alumni-stats></app-alumni-stats>
+    </div>
+    <div class="header">
+
+      <h1>List of Alumni</h1>
+
+    </div>
+    <div class="alumni-toggler">
+      <button type="button" class="btn btn-primary" (click)="toggleAlumniTable()">
+        {{ showAlumniTable ? 'Hide Alumni Table' : 'View Alumni Table' }}
+      </button>
+    </div>
+    <div class="alumni-table">
+      <table *ngIf="showAlumniTable" mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <!-- Position Column -->
+        <ng-container matColumnDef="alumni_Id">
+          <th mat-header-cell *matHeaderCellDef> Alumni_Id </th>
+          <td mat-cell *matCellDef="let element"> {{element.account_id}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="alumniName">
+          <th mat-header-cell *matHeaderCellDef> Alumni_Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.alumniName}} </td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="location">
+          <th mat-header-cell *matHeaderCellDef> Alumni_Location </th>
+          <td mat-cell *matCellDef="let element"> {{element.location}} </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="qualification">
+          <th mat-header-cell *matHeaderCellDef> Qualification </th>
+          <td mat-cell *matCellDef="let element"> {{element.qualification}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="skills">
+          <th mat-header-cell *matHeaderCellDef> skills </th>
+          <td mat-cell *matCellDef="let element"> {{element.skills}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="experience">
+          <th mat-header-cell *matHeaderCellDef> Experience </th>
+          <td mat-cell *matCellDef="let element"> {{element.experience}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="employment_Status">
+          <th mat-header-cell *matHeaderCellDef> Employment_Status </th>
+          <td mat-cell *matCellDef="let element"> {{element.employment_Status}} </td>
+        </ng-container>
+
+        <!-- Alumni Picture Column -->
+        <ng-container matColumnDef="alumniPicture">
+          <th mat-header-cell *matHeaderCellDef> Alumni Picture </th>
+          <td mat-cell *matCellDef="let element">
+            <img class="round-image" [src]="element.alumniPicture"
+              style="height: 50px; width: 50px; object-fit: cover;" />
+            <!-- <a (click)="openImageModal(element.alumniPicture)"> -->
+            <!-- <img class="round-image" [src]="element.alumniPicture" alt="Alumni Image" style="width: 100px; height: 100px;" /> -->
+            <!-- </a> -->
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="alumni_Networks">
+          <th mat-header-cell *matHeaderCellDef> Alumni_total_Networks </th>
+          <td mat-cell *matCellDef="let element"> {{element.alumni_Networks}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+
+    <!-- <app-top-widgets></app-top-widgets> -->
+    <!-- <app-last-few-notifications></app-last-few-notifications> -->
+
+    <!--Dipono-->
+    <app-all-alumnus></app-all-alumnus>
+
+  
+  </div>
+</div>

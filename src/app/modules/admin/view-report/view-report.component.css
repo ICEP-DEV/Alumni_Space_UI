@@ -1,0 +1,31 @@
+.card{
+    margin-top: 10px;
+    /* box-shadow: 5px 3px 5px 3px blue; */
+    background-color: #e4dbdb9f;
+    width: auto;
+    height: 700px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.card h2{
+    text-align: center;
+}
+.card p{
+    margin-left: 5px;
+    font-size: 20px;
+    font-style: bold;
+}
+.card table{
+    background-color: #fff;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: auto;
+    /* box-shadow: 3px 5px 4px 2px blue; */
+}
+.card button{
+    /* text-align: center; */
+    width: 200px;
+    margin-top: 5px;
+    margin-left: 45%;
+    margin-bottom: 10px;
+}

@@ -1,0 +1,58 @@
+.question {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: white;
+    font-style: normal;
+    margin-top: 0%;
+    padding-right: 15%;
+    text-align: center; 
+
+}
+
+
+/*query*/
+/*query-entry.component.css*/
+.user-question {
+  background-color: #fff;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 10px;
+  text-align: center; 
+}
+
+
+  #user-question-input {
+    width: 40%;
+    height: 85%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-style:normal;
+    display: block; 
+    margin: 20px auto; 
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  #ask-button {
+    background-color: #000;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    width: 20%;
+    font-style: normal;
+    margin: 0 auto;
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+/* bdy */
+body {
+  /*background: url('/assets/yytf\ \(2\).jpeg');*/
+  background: white;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+}

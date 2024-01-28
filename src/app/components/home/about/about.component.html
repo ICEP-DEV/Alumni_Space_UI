@@ -1,0 +1,173 @@
+<app-header></app-header>
+
+<!DOCTYPE html>
+<html ng-app="AboutUsApp">
+<head>
+    <meta charset="UTF-8">
+    <title>About Us</title>
+    <link rel="stylesheet" href="./about.component.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body ng-controller="AboutUsController">
+  
+    <header>
+        <h1>About Us</h1>
+    </header>
+
+    <section class="team-section">
+        <h2>Our Team</h2>
+        
+            <ul ng-repeat="member in teamMembers">
+                <div class="team-member grid">
+                    <!--<img ng-src="{{ member.image }}" alt="{{ member.name }}">
+                    <h3>{{ member.name }}</h3>
+                    <p>{{ member.role }}</p>-->
+
+                    <div class="card" style="width: 18rem;">
+                      <img src="../../../../assets/cindi.jfif" class="card-img-top" alt="...">
+                      <div class="card-body">
+                          <h3>Nonhlanhla Cindi</h3>
+                          <p class="card-text">Role: Team Leader</p>
+                        <p class="card-text"></p>
+                      </div>
+                    </div>
+                  
+                    <div class="card" style="width: 18rem;">
+                        <img src="../../assets/Sihle.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h3>Sihle Mhlongo</h3>
+                            <p class="card-text">Role: Front-End Developer</p>
+                          <p class="card-text"></p>
+                        </div>
+                      </div>
+
+                      <div class="card" style="width: 18rem;">
+                        <img src="../../assets/Sneh.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h3>Sinenhlanhla Masuku</h3>
+                            <p class="card-text">Role: Front-End Developer</p>
+                          <p class="card-text"></p>
+                        </div>
+                      </div>
+                    
+                      <div class="card" style="width: 18rem;">
+                        <img src="../../assets/Master.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h3>Innocent Aphane</h3>
+                            <p class="card-text">Role: Business Analyst</p>
+                          <p class="card-text"></p>
+                        </div>
+                      </div>
+                    
+                      <div class="card" style="width: 18rem;">
+                        <img src="../../assets/Themba.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h3>Themba Mabena</h3>
+                            <p class="card-text">Role: Back-End Developer</p>
+                          <p class="card-text"></p>
+                        </div>
+                      </div>
+                    
+                      <div class="card" style="width: 18rem;">
+                        <img src="../../assets/Patience.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h3>Patience Malobane</h3>
+                            <p class="card-text">Role: Front-End Developer</p>
+                          <p class="card-text"></p>
+                        </div>
+                      </div>
+                    
+                      <div class="card" style="width: 18rem;">
+                        <img src="../../assets/kgaogelo.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h3>Kgaogelo Mashao</h3>
+                            <p class="card-text">Role: Business Analyst</p>
+                          <p class="card-text"></p>
+                        </div>
+                      </div>
+                    
+                      <div class="card" style="width: 18rem;">
+                        <img src="../../assets/Xolly.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h3>Xolile Mathonsi</h3>
+                            <p class="card-text">Role: Business Analyst</p>
+                          <p class="card-text"></p>
+                        </div>
+                      </div>
+                    
+                      <div class="card" style="width: 18rem;">
+                        <img src="../../assets/Berlinah.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h3>Berlinah Phogole</h3>
+                            <p class="card-text">Role: Front-End Developer</p>
+                          <p class="card-text"></p>
+                        </div>
+                      </div>
+                    
+                      <div class="card" style="width: 18rem;">
+                        <img src="../../assets/Kfentse.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h3>Kefentse Mnisi</h3>
+                            <p class="card-text">Role: Back-End Developer</p>
+                          <p class="card-text"></p>
+                        </div>
+                      </div>
+                    
+                    
+                      <div class="card" style="width: 18rem;">
+                        <img src="../../assets/Noxolo.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h3>Noxolo Mnyalo</h3>
+                            <p class="card-text">Role: Front-End Developer</p>
+                          <p class="card-text"></p>
+                        </div>
+                      </div>
+                      
+                      <div class="card" style="width: 18rem;">
+                        <img src="../../assets/Linda Zwane.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h3>Linda Zwane</h3>
+                            <p class="card-text">Role: Front-End Developer</p>
+                          <p class="card-text"></p>
+                        </div>
+                      </div>
+                       
+                      <div class="card" style="width: 18rem;">
+                        <img src="../../assets/Gustav.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h3>Gustav Mamosadi</h3>
+                            <p class="card-text">Role: Back-End Developer</p>
+                          <p class="card-text"></p>
+                        </div>
+                      </div>
+                    
+                      <div class="card" style="width: 18rem;">
+                        <img src="../../../../assets/Lehl.jfif" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h3>Gustav Mamosadi</h3>
+                            <p class="card-text">Role: Front-End Developer</p>
+                          <p class="card-text"></p>
+                        </div>
+                      </div>
+                  
+                </div>
+        </ul>
+    </section>
+
+    <section class="mission-section">
+        <h2>Our Mission</h2>
+       <!---- <p>{{ missionStatement }}</p>-->
+        <p> "Our aim is to bridge the gab between industries and High institutions, so we provide internally Work-Intergrated Leaarning and available TUT vacancies."
+              And we also track our alumni how far they are with studies or achievement.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Alumni_SpaceUI</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <!-- <app-image-slider></app-image-slider> -->
+</body>
+</html>
+
+<app-footer></app-footer>

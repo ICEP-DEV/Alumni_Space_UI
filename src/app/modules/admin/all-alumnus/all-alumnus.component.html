@@ -1,0 +1,12 @@
+
+
+<div class="content">
+    <div class="alumnus" >
+        <div class="card" *ngFor="let alumn of Alumnus" (click)="getAlumniInfo(alumn)">
+            <img src={{alumn.image}} alt="profile">
+            <h3>{{alumn.name}}</h3>
+            <p class="title">{{alumn.company}}</p>
+            <p>{{alumn.role}}</p>
+        </div>
+    </div>
+</div>

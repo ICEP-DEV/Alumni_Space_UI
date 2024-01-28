@@ -1,0 +1,55 @@
+.faq{
+   background-color: #fff;
+}
+.faq-button {
+  
+  background-color: #000;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: block; 
+  margin-bottom: 10px; 
+  
+}
+button{
+  width: 500px;
+  background-color: #000;
+  color: white;
+  font-family:Arial, Helvetica, sans-serif ;
+  font-size: medium;
+  margin-top: 15px;
+  margin-left: 85px;
+}
+
+.faq-button:hover {
+  background-color: #0056b3;
+}
+
+
+button{
+  width: 450px;
+}
+
+.faq-button:hover {
+  background-color: #0056b3;
+}
+
+.answer {
+  margin-top: 10px;
+  padding: 10px;
+  color: black;
+  margin-left: 85px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1
+{
+ margin-left: 35%;
+ padding-top: 35px;
+ align-items: center;
+ color: black;
+ font-family: Arial, Helvetica, sans-serif;
+ 
+}

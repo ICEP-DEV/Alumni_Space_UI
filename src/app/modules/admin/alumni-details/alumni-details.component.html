@@ -1,0 +1,31 @@
+<app-navbar></app-navbar>
+<div id="alumni">
+    <h1>Name: {{alumni.name}}</h1>
+    <h1>Comapany: {{alumni.company}}</h1>
+    <h1>Role :{{alumni.role}}</h1>
+</div>
+
+<div id="employed">
+    <h1>Employment Status: Employed</h1>
+    <h1>Total Years of Experience 3</h1>
+</div>
+
+<table id="customers">
+    <thead>
+        <th>Comapany Names</th>
+        <th>Role</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Months</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let detail of alumni_details" class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content"
+            data-aos="fade-right" data-aos-delay="100">
+            <td>{{detail.company}}</td>
+            <td>{{detail.role}}</td>
+            <td>{{detail.startDate}}</td>
+            <td>{{detail.endDate}}</td>
+            <td>8</td>
+        </tr>
+    </tbody>
+</table>

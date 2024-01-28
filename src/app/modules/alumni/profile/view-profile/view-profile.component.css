@@ -1,0 +1,184 @@
+/* body .h1 {
+    color: #000;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+} */
+.user-info{
+    /* border-style: ridge; */
+    /* border-color: white; */
+    /* margin-left: 3px; */
+    /* box-shadow: 5px 5px 5px 5px blue; */
+  }
+  .user-info p{
+      margin-left: 50px;
+      margin-right: 50px; 
+      margin-top: 10px;
+      text-align: center;
+     
+  }
+  .user-cred{
+      /* margin-top: -200px; */
+      /* margin-top: -60vh; */
+      margin-top: 10px;
+      /* box-shadow: 2px 3px 2px 3px blue; */
+      box-shadow: 2px 2px 2px 2px gray;
+      width: 90vh;
+      margin-left: 25%;
+      margin-right: 25%;
+  }
+  .user-cred p{
+      font-size: 15px;
+      color: #000;
+  
+  }
+  /* .user-bio{
+      margin-left: 75%;
+      margin-top: 20px;
+      margin-top: auto;
+      width: auto;
+      height: auto;
+      box-shadow: 5px 5px 5px 5px blue;
+  } */
+  /* .card {
+      padding: 10px 10px 10px;
+      border: 1px solid #ccc;
+      box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.5);
+      box-shadow: 5px 5px 5px 5px blue;
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      
+  } */
+  
+  /* .card-body {
+      padding: 0 20px 20px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      margin-left: 30px;
+      margin-right: 30px;
+  
+  } */
+  
+  /* .card-body p {
+      display: flex;
+      align-items: right;
+      margin-left: 60%;
+      font-size: 25px;
+      font-style: oblique;
+      margin-right: 20px;
+  } */
+  
+  .wrapper {
+      background-color: white;
+      padding: 10px;
+      /* border: 1px solid #ccc; */
+      margin: 20px;
+      justify-content: center;
+      align-content: center;
+      padding: 20px;
+      /* box-shadow: 5px 5px 5px 5px blue; */
+      /* box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3); */
+      width: 40%;
+      /* width: auto; */
+      margin-left: 10%;
+      margin-right: 10%;
+  }
+  
+  .wrapper h1 {
+      text-decoration: none;
+      text-transform: uppercase;
+      color: #000;
+      font-size: xx-large;
+  
+  }
+  
+  /* .wrapper p {
+      text-decoration: none;
+      text-transform: lowercase;
+      color: black;
+      font-size: large;
+  } */
+  
+  /* .wrapper input {
+      align-content: space-between;
+  } */
+  
+  /* .wrapper2 {
+      background-color: whitesmoke;
+      padding: 20px;
+      border: 1px solid #ccc;
+      margin: 20px;
+      justify-content: center;
+      align-content: center;
+      padding: 20px;
+  
+      box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
+      width: 70%;
+  } */
+  .card-text{
+  
+   background-color: None;
+   /* width: 600px; */
+   width: 90vh;
+   height: auto;
+   /* border-color: blue;
+   border-style: ridge; */
+   /* box-shadow: 3px 3px 3px 3px blue; */
+   margin-bottom: 10%;
+   margin-left: 25%;
+   margin-right: 25%;
+  }
+  /* .image img{
+      margin-top: 10%;
+      margin-left: 5px;
+      margin-right: 10px;
+      border-radius: 100%;
+      border-style: ridge;
+      border-color: blue;
+  } */
+  .certificates-list{
+      /* border-color: whitesmoke;
+      border-style: ridge; */
+      margin-left: 25%;
+      margin-right: 25%;
+      margin-top: 10px;
+      box-shadow: 2px 2px 2px 2px gray;
+      margin-bottom: 10px;
+      width: auto;
+  }
+  .certificates-list h1{
+      text-align: center;
+      font-size: 30px;
+      font-style: bold;
+  }
+  .certificates-list p{
+   margin-right: -10%;
+   margin-left: 10%;
+   color: #000;
+  }
+  /* .academic_record{
+      border-style: ridge;
+      border-color: aliceblue;
+      box-shadow: 5px 5px 5px 5px blue;
+  }  */
+  .academic_record h1{
+   text-align: center;
+   font-size: 30px;
+   font-style: bold;
+  }
+  .academic_record button{
+      margin-top: 10px;
+      margin-left: 40%;
+      margin-bottom: 10px;
+  }
+  .top-button button{
+      margin-right: -100%;
+      margin-top: 1px;
+      color: gray;
+      border-radius: 50%;
+      border-color: #ccc;
+      border-style: double;
+      border-spacing: 20px;
+   }

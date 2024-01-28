@@ -1,0 +1,46 @@
+<app-header></app-header>
+<div class="slide-container">
+  <!-- <img [src]="images[currentIndex]" alt="Slide"> -->
+  <app-image-slider></app-image-slider>
+  <div class="hover-component">
+    <div class="wrapper">
+      <i class="fa fa-times" aria-hidden="true"></i>
+      <div class="form-box login">
+          <h2>Registration</h2>
+          <!-- onLogin() -->
+          <form (ngSubmit)="onSubmit()">
+              <div class="input-box">
+                <input type="text" required [(ngModel)]="fullname" name="fullname">
+                <label>Name</label>
+              </div>
+              <div class="input-box">
+                <input type="text" required [(ngModel)]="surname" name="surname">
+                <label>Surname</label>
+              </div>
+              <div class="input-box">
+                <input type="email" required [(ngModel)]="email" name="email">
+                <label>Student Email</label>
+              </div>
+              <div class="input-box">
+                <input type="password" required [(ngModel)]="password" name="password">
+                <label>Password</label>
+              </div>
+              <div class="remember-forgot">
+                <label><input type="checkbox" name="agreeToTerms"> Agree to terms and conditions</label>
+              </div>
+              <button class="btn" id="mgs" type="submit">Register</button>
+              <div class="login-register">
+                <p>Already have an account? <a href="/login" class="login-link">Login</a></p>
+              </div>
+            </form>
+      </div>
+        
+  </div> 
+  </div>
+
+</div>
+
+
+
+<app-footer></app-footer>
+<!--</div>-->

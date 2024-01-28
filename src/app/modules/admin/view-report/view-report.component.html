@@ -1,0 +1,54 @@
+<!-- <p>view-report works!</p> -->
+<app-navbar></app-navbar>
+<div class="card">
+    <h2>Report Details</h2>
+    <!-- <table *ngIf="reportData.length > 0">
+      <thead>
+        <tr>
+          <th>Column 1</th>
+          <th>Column 2</th>
+          <th>Column 3</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of reportData">
+          <td>{{ data.column1 }}</td>
+          <td>{{ data.column2 }}</td>
+          <td>{{ data.column3 }}</td>
+        </tr>
+      </tbody>
+    </table> -->
+      <p>Report for this month: {{month}}</p>
+      <p>Date: {{formattedDate}}</p>
+
+ <!-- using-table -->
+<table>
+  <tr>
+    <th>Date registered</th>
+    <th>Total Alumni Registered</th>
+    <th>Total Jobs Posted</th>
+    <th>Total Jobs Expired</th>
+    <th>Total Events Posted</th>
+    <th>Total Events Cancelled</th>
+    <th>Total Alumni Employed</th>
+    <th>Total Alumni Not Employed</th>
+  </tr>
+  <tr *ngFor="let row of reportData">
+    <td>{{ row[0] }}</td>
+    <td>{{ row[1] }}</td>
+    <td>{{ row[2] }}</td>
+    <td>{{ row[3] }}</td>
+    <td>{{ row[4] }}</td>
+    <td>{{ row[5] }}</td>
+    <td>{{ row[6] }}</td>
+    <td>{{ row[7] }}</td>
+  </tr>
+</table>
+
+
+
+
+    <button type="button" class="btn btn-success" (click)="generatePDF()">Download Report</button>
+    <!-- reportData,'fileName','txt' -->
+  </div>
+  <app-admin-footer></app-admin-footer>

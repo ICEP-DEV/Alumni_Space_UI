@@ -1,0 +1,241 @@
+header {
+    background-color: white;
+    width: 100%;
+    position: sticky;
+    justify-content: space-between; /* Push the logo and menu to opposite ends */
+    align-items: center;
+    z-index: 100;
+    display: flex;
+    padding: 10px; /* Adjusted padding for spacing */
+ 
+}
+
+
+.logo {
+    display: flex; /* Display logo and text container in a row */
+    align-items: center; /* Vertically center logo and text */
+}
+
+.logo img {
+    height: 95px;
+    margin-right: 10px; /* Add some space between the logo and text */
+}
+
+.text-container p {
+    font-size: 18px;
+    margin: 0; /* Remove margin for the text */
+    color: blue;
+}
+.nav-menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-size: 10px;
+}
+
+.nav-menu li {
+    display: inline-block;
+    margin-right: 20px;
+    
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+}
+
+/* Additional styles for the navigation menu items */
+.nav-menu ul li {
+    display: inline-block;
+    
+}
+
+.nav-menu ul li a {
+    color: black;
+    font-size: 9px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+
+#addedImageContainer{
+    padding-bottom: 20px;
+}
+.nav-menu a:hover {
+    color: #3498db; /* Change color on hover */
+  }
+
+#navbar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#navbar ul li {
+    display: inline-block;
+    margin-right: 10px; /* Optional: Add space between list items */
+}
+
+#navbar ul li a {
+    text-decoration: none; /* Remove underlines from links */
+}
+
+/* Optional: Style the active link differently */
+#navbar ul li a.active {
+    font-weight: bold;
+}
+.align-items-center {
+    align-items: center!important;
+}
+.justify-content-between {
+    justify-content: space-between!important;
+}
+.d-flex {
+    display: flex!important;
+}
+h1 {
+    text-align: center;
+    color: white;
+    background-color: blue;
+    height: 60px;
+    text-align: center;
+}
+
+h2{
+
+    background-color: gray;
+    text-align: center;
+    color: white;
+}
+h4{
+    text-align: center;
+    
+    
+}
+
+#addButton:hover {
+    background-color: blue;
+}
+  
+#deleteButton {
+    background-color: red;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#deleteButton:hover {
+    background-color: darkred;
+}
+  
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  
+  .modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    text-align: center;
+    position: relative;
+  }
+  
+  .close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    color: #888;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  .close:hover {
+    color: red; /* Change the close button color on hover if needed */
+  }
+  
+  /* Style for the "Close" button */
+#closeButton {
+    display: block;
+    margin: 0 auto; /* Center the button horizontally */
+    padding: 10px 20px; /* Adjust the padding as needed */
+    background-color: #000; /* Button background color */
+    color: #fff; /* Button text color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.imageContainer{
+    margin-top: 10px;
+}
+
+
+
+.event-details-card h2 {
+    font-size: 1.5em;
+    margin-top: 0;
+   
+}
+
+.event-details-card p {
+    margin: 0;
+}
+
+
+.event-details-card label {
+    display: block; /* Make labels block-level elements */
+    font-weight: bold; /* Add bold style to labels */
+    margin-top: 10px; /* Add space above labels */
+  }
+  
+  .event-details-card textarea {
+    
+    width: 100%; /* Take the full width available */
+    max-width: 300px;
+    padding: 5px; /* Add some padding */
+    margin-top: 5px; /* Add space between the label and textarea */
+    height: 100px; /* Set the desired height for the description textarea */
+    resize: vertical; /* Allow vertical resizing */
+  }
+
+  .event-item {
+    display: flex; /* Display items in a flex container */
+   
+    margin-bottom: 20px; /* Add space between event items */
+    align-items: flex-start; /* Align items at the top */
+    margin-left: 50px;
+    /* margin-right: 20px; */
+  }
+  
+  .event-details {
+    flex: 1; /* Allow event details to take up remaining space */
+    padding: 10px; /* Add padding to event details */
+  }
+  
+  img {
+    max-width: 100px;
+    height: 100px;
+    margin-right: 20px; /* Add space between image and event details */
+  }
+  .top-button button{
+    margin-right: -100%;
+    margin-top: 1px;
+    color: #000;
+    border-radius: 50%;
+    border-color: #ccc;
+    border-style: double;
+    border-spacing: 20px;
+ }
+  

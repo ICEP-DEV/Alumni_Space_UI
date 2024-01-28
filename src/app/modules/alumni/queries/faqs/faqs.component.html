@@ -1,0 +1,14 @@
+<div class="faq">
+    <h1>Frequently asked Questions(FAQs)</h1>
+     <button (click)="toggleAnswer(1)">How to navigate around the application?</button>
+     <div *ngIf="showAnswer[1]" class="answer">Click on the "Home" button to navigate around the application.</div>
+   
+     <button (click)="toggleAnswer(2)">How to reset my password?</button>
+     <div *ngIf="showAnswer[2]" class="answer">Click on "Forgot my password" on the log-in page.</div>
+   
+     <button (click)="toggleAnswer(3)">Can I edit and update my profile?</button>
+     <div *ngIf="showAnswer[3]" class="answer">Yes! Under "Profile," you can edit and update.</div>
+   </div>
+   
+   
+   

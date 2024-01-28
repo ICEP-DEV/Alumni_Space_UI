@@ -1,0 +1,38 @@
+<div class="widget-container">
+    <div class="widget bg-primary">
+        <div class="icon">
+            <fa-icon [icon]="faPerson"></fa-icon>
+        </div>
+        <div class="value">
+            <div class="top">{{alumniCount}}</div>
+            <div class="bottom">Alumni<br>(Active)</div>
+        </div>
+    </div>
+    <div class="widget bg-info">
+        <div class="icon">
+            <fa-icon [icon]="faSuitcase"></fa-icon>
+        </div>
+        <div class="value">
+            <div class="top">{{jobCount}}</div>
+            <div class="bottom">Jobs<br>(Active)</div>
+        </div>
+    </div>
+    <div class="widget bg-warning">
+        <div class="icon">
+            <fa-icon [icon]="faCalendarWeek"></fa-icon>
+        </div>
+        <div class="value">
+            <div class="top">{{eventCount}}</div>
+            <div class="bottom">Events (pending)</div>
+        </div>
+    </div>
+    <div class="widget bg-danger">
+        <div class="icon">
+            <fa-icon [icon]="faClock"></fa-icon>
+        </div>
+        <div class="value">
+            <div class="top"  (click)='start()'>{{totalSessions}} %</div>
+            <div class="bottom">Sessions</div>
+        </div>
+    </div>
+</div>

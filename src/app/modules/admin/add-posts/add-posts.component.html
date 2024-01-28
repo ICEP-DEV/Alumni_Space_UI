@@ -1,0 +1,96 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet"  href="./add-posts.component.css">
+</head>
+<body> -->
+    <app-navbar></app-navbar>
+    <div class="card">
+      <h1> Post Event</h1>
+      <div>
+       <a routerLink="/view-events">
+          <button type="submit" style="margin-left: 40px;" id ="viewEventButton">View Events</button></a>
+      </div>
+      
+
+   
+<div class="event-details-card">
+  <h4>  Event Details</h4>
+
+
+<form [formGroup]="eventForm" (ngSubmit)="postEvent()">
+  <input type="text" formControlName="eventTitle" placeholder="Event Title" style="border-radius: 5px;"><br>
+  <textarea formControlName="eventDescription" placeholder="Event Description" style="border-radius: 5px;"></textarea><br>
+
+  <label for="event_date"><b>Event Date:</b></label>
+  <input type="datetime-local" formControlName="eventDate" class="form-control"   name="event_date" id="event_date">
+  
+  <!--<input type="file" (change)="onImageChange($event)" accept="image/*"> -->   <br>
+  <input type="file" accept="image/png, image/jpeg, image/jpg" (change)="onProfilePicChange($event)" class="form-control" id="profile_picture" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+  <img [src]="imageFile ? imageFile : ''" alt="Event Image Preview" style="max-width: 300px;"><br>
+
+   
+  <button type="submit" id ="postEventButton" >Post Event</button>
+    
+  
+ 
+
+</form>
+
+
+
+</div>
+
+<!-- Your existing code for posting an event -->
+
+<h2 style="margin-left: 40px;">Posted Events</h2>
+<table class="solid-border-table">
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Posted On</th>
+      <th>Event Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let event of events; let i = index">
+      <td>
+        <img *ngIf="event.event_file" [src]="getEventPictureUrl(event.event_file)" alt="{{ event.event_title }}" style="max-width: 100px; height: auto;">
+      </td>
+      <td>
+        <h3>{{ event.event_title }}</h3>
+      </td>
+      <td>
+        <p>{{ event.event_description }}</p>
+      </td>
+      <td>
+        <p><b>Posted On:</b> {{ currentDate | date:'fullDate' }} ({{ getTimeDifference(event.date_posted) }})</p>
+      </td>
+      <td>
+        <p>Event Date: {{ event.event_date | date:'medium' }}</p>
+      </td>
+     
+      <td>
+        <button (click)="editEvent(i)" id="editButton">Edit</button>
+        <button (click)="deleteEvent(event.event_id)" id="deleteButton">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<div class="modal-background" *ngIf="showModal">
+  <app-success-modal (closeModalEvent)="closeModal()"></app-success-modal>
+</div>
+</div>
+
+
+<!-- </body>
+</html> -->
+
+  

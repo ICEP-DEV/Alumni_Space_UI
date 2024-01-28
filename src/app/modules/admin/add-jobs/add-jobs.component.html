@@ -1,0 +1,134 @@
+<app-navbar></app-navbar>
+<div class="card">
+<div class="container">
+     <!-- mt-4"> -->
+    <div class="card1">
+        <h1>Add Job</h1>
+
+        <form [formGroup]="jobForm" (ngSubmit)="save()">
+
+            <div class="form-group">
+                <label for="jobTitle"><b>Job Title:</b><span class="red-asterisk">*</span></label>
+                <input type="text" class="form-control" formControlName="job_title" name="job_title" id="jobTitle"
+                    required>
+            </div>
+            <div class="form-group">
+                <label for="organization"><b>Organization:</b><span class="red-asterisk">*</span></label>
+                <input type="text" class="form-control" formControlName="Organisation" name="Organisation"
+                    id="organization" required>
+            </div>
+
+            <div class="form-group">
+                <label for="location"><b>Location:</b><span class="red-asterisk">*</span></label>
+                <select class="form-control" formControlName="location" name="location" id="location" required>
+                    <option value="location">Location</option>
+                    <option value="Soshanguve">Soshanguve</option>
+                    <option value="Emalahleni">Emalahleni</option>
+                    <option value="Polokwane">Polokwane</option>
+                    <option value="Mbhombela">Mbhombela</option>
+                    <option value="Pretoria">Pretoria</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="workPlaceType"><b>Workplace Type:</b><span class="red-asterisk">*</span></label>
+                <select class="form-control" formControlName="workplace_type" name="workplace_type" id="workPlaceType"
+                    required>
+                    <option value="workPlaceType">Choose workplace type</option>
+                    <option value="Onsite">Onsite</option>
+                    <option value="Hybrid">Hybrid</option>
+                    <option value="Remote">Remote</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="jobType"><b>Job Type:</b><span class="red-asterisk">*</span></label>
+                <select class="form-control" formControlName="job_type" name="job_type" id="jobType" required>
+                    <option value="jobType">Choose the job type</option>
+                    <option value="Full-time">Full-time</option>
+                    <option value="Part-time">Part-time</option>
+                    <option value="Contract">Contract</option>
+                    <option value="Temporary">Temporary</option>
+                    <option value="Other">Other</option>
+                    <option value="Volunteer">Volunteer</option>
+                    <option value="Internship">Internship</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="organization"><b>Salary:</b><span class="red-asterisk">*</span></label>
+                <input type="text" class="form-control" formControlName="salary" name="salary" id="salary" required>
+            </div>
+            <div class="form-group">
+                <label for="jobDescription"><b>Job Description:</b><span class="red-asterisk">*</span></label>
+                <textarea class="form-control" formControlName="job_description" name="job_description"
+                    id="jobDescription" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="jobDescription"><b>Required knowledge, skills :</b><span
+                        class="red-asterisk">*</span></label>
+                <textarea class="form-control" formControlName="required_Skills" name="required_Skills"
+                    id="jobDescription" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="jobDescription"><b>Education + Experience</b><span class="red-asterisk">*</span></label>
+                <textarea class="form-control" formControlName="experience" name="experience" id="jobDescription"
+                    rows="4" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="deadline"><b>Deadline:</b></label>
+                <input type="datetime-local" class="form-control" formControlName="deadline" name="deadline"
+                    id="deadline">
+            </div>
+
+            <button type="submit" class="btn btn-primary mt-4">Save</button>
+
+        </form>
+    </div>
+
+
+
+    <div class="container mt-4">
+        <h1>Jobs Table</h1>
+        <table class="table">
+            <thead>
+                <!--  <h1 *ngIf="!isResultLoaded">Loading.................</h1>    -->
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Job title</th>
+                    <th scope="col">Organisation</th>
+                    <th scope="col">workplace type</th>
+                    <th scope="col">Location</th>
+                    <th scope="col">job type</th>
+                    <th scope="col">job description</th>
+                    <th scope="col">Required knowledge, skills</th>
+                    <th scope="col">Education + Experience</th>
+                    <th scope="col">Salary</th>
+                    <th scope="col">date posted</th>
+                    <th scope="col">DeadLine</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let StudentItem of StudentArray">
+                    <td>{{StudentItem.job_id }}</td>
+                    <td>{{StudentItem.job_title }}</td>
+                    <td>{{StudentItem.Organisation }}</td>
+                    <td>{{StudentItem.workplace_type }}</td>
+                    <td>{{StudentItem.location }}</td>
+                    <td>{{StudentItem.job_type }}</td>
+                    <td>{{StudentItem.job_description }}</td>
+                    <td>{{StudentItem.required_Skills }}</td>
+                    <td>{{StudentItem.experience }}</td>
+                    <td>{{StudentItem.salary }}</td>
+                    <td>{{StudentItem.date_posted | date:'medium'}}</td>
+                    <td>{{StudentItem.deadline | date:'medium'}}</td>
+
+                    <td>
+                        <button type="button" class="btn btn-success" (click)="setUpdate(StudentItem)">Edit</button>
+                        <button type="button" class="btn btn-danger" (click)="setDelete(StudentItem)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

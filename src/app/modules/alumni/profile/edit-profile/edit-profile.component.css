@@ -1,0 +1,117 @@
+/* body .h1 {
+    color: #000;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+} */
+.edit-form h2{
+    text-align: center;
+}
+
+.card {
+    padding: 10px 10px 10px;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 2px 2px gray;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.card-body {
+    padding: 0 20px 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-body p {
+    display: flex;
+    align-items: right;
+    margin-left: 60%;
+    font-size: 25px;
+    font-style: oblique;
+}
+
+.wrapper {
+    margin-left: auto; 
+    margin-right: auto;
+    background-color: aliceblue;
+    padding: 20px;
+    border: 1px solid #ccc;
+    /* margin: 20px; */
+    justify-content: center;
+    align-content: center;
+    padding: 20px;
+
+    box-shadow: 2px 2px 2px 2px gray;
+    /* width: 70%; */
+    width: auto;
+}
+
+.wrapper h2 {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: black;
+    font-size: xx-large;
+
+}
+
+.wrapper p {
+    text-decoration: none;
+    text-transform: lowercase;
+    color: black;
+    font-size: large;
+}
+
+.wrapper input {
+    align-content: space-between;
+}
+
+.wrapper2 {
+    /* margin-left: auto; 
+    margin-right: auto; */
+
+    background-color: #fff;
+    padding: 10px;
+    /* border: 1px solid #ccc; */
+    margin: 20px;
+    justify-content: center;
+    align-content: center;
+    padding: 10px;
+
+    box-shadow: 2px 2px 2px 2px gray;
+    width: 70%;
+    /* margin-bottom: 100px; */
+    /* padding-bottom: 30px; */
+}
+.message{
+    background-color: #fff;
+    margin-top: 20px;
+
+}
+.message h6{
+  text-align: center;
+}
+.message p{
+ text-align: center;
+ color: green;
+ font-size: larger;
+}
+.confirmation{
+    margin-left: 100%;
+    /* width: 20px;
+    height: 20px; */
+}
+/* .snackbar{
+    margin-top: 6px;
+    background-color: #fff;
+} */
+.top-button button{
+   margin-right: -100%;
+   margin-top: 1px;
+   color: blue;
+   border-radius: 50%;
+   border-color: #ccc;
+   border-style: double;
+   border-spacing: 20px;
+}

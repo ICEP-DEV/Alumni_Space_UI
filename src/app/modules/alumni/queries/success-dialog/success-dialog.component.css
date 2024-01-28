@@ -1,0 +1,31 @@
+/* success-modal.component.css */
+.success-modal {
+    background-color: #fff; 
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .modal-title {
+    font-size: 24px;
+    color: #333; 
+  }
+  
+  .modal-message {
+    font-size: 18px;
+    color: #666; 
+  }
+  
+  .close-button {
+    background-color: #333; 
+    color: #fff; 
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  

@@ -1,0 +1,93 @@
+.card{
+    background-color: #e4dbdb9f;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 650px;
+  }
+  
+  .container{
+      width: 100%;
+      
+      margin-left: 10%;
+      margin-right: 10%;
+      background-color: #e4dbdb9f;
+  }
+  .container h1{
+      text-align: center;
+      font-size: 40px;
+      color: #fff;
+  }
+  .form{
+      padding: 20px;;
+  }
+  .Actions-btns{
+      display: flex;
+      padding: 20px;
+  }
+  
+  .table table{
+      margin-left: 10px;
+      margin-right: 10px; 
+      
+      box-shadow: 5px 5px 5px 5px gray;
+      width: 200px;
+      height: auto;
+  }
+  .View-card{
+      margin-top: 10px;
+      
+      background-color: #e4dbdb9f;
+      /* transition: all linear 0.5s;   */
+  
+  
+  
+  }
+  /* Add these styles to your component's CSS file or styles section */
+  
+  .job-table {
+      width: 100%;
+      overflow-x: auto; /* Enable horizontal scrolling if the table is wider than the container */
+    }
+    
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+    
+    thead {
+      background-color: #e4dbdb9f;
+    }
+    
+    .Actions-btns button {
+      margin-left: 5px;
+    }
+    
+    /* Media query for responsiveness */
+    @media (max-width: 768px) {
+      /* Adjust styles for smaller screens */
+      .table {
+        font-size: 14px;
+      }
+    
+      th, td {
+        padding: 6px;
+      }
+    
+      .Actions-btns button {
+        margin-left: 2px;
+      }
+    }
+    .pdf-container {
+      width: 100%;
+      height: 500px; /* Adjust the height as needed */
+    }
+  
+    
+    

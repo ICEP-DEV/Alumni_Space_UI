@@ -1,0 +1,76 @@
+<!-- <p>admin-job-applications works!</p> -->
+   <!--new-->
+   <!-- <p>admin-job-applications works!</p> -->
+   <app-navbar></app-navbar>
+   <div class="card">
+   <div class="container">
+     <h1>Job Applications Track</h1>
+     <!--job application table-->
+     <div class="job-table">
+       <!-- class="table" -->
+     <table class="table">
+       <thead>
+         <tr>
+           <th>Alumni_Id</th>
+           <th>FirstName</th>
+           <th>LastName</th>
+           <th>JobApplied For</th>
+           <th>Application Status</th>
+           <th>Shortlisted</th>
+           <th>Interview Date</th>
+           <th>Interview Time</th>
+           <th>Actions</th>
+           
+         </tr>
+       </thead>
+       <tbody>
+         <tr *ngFor="let application of alumniData">
+           
+           <td>{{ application.alumni_id }}</td>
+           <td>{{ application.name }}</td>
+           <td>{{ application.surname }}</td>
+           <td>{{ application.saved_job_title }}</td>
+           <td>{{ application.applicationStatus }}</td>
+           <td>{{ application.shortlisted}}</td>
+           <td>{{ application.interviewDate }}</td>
+           <td>{{application.interviewTime}}</td>
+           <td>
+              <div class="Actions-btns">
+             <button mat-raised-button class="btn btn-outline-info" (click)="toggleAlumniResume(application)"  color="primary">View Resume</button>
+             <button mat-raised-button (click)="openInterviewDialog(application)" style="margin-left: 5px;"  color="primary">Accept Application</button>
+             <button mat-raised-button (click)="openRejectionDialog(application)" style="margin-left: 5px;"  color="primary">Reject Application</button>
+             <button mat-raised-button (click)="openSuccessDialog(application)" style="margin-left: 5px;"  color="primary"> Application Succeed</button>
+             <button mat-raised-button color="primary" (click)="notifyApplicant(application, interviewDate!)"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bell-fill" viewBox="0 0 16 16">
+               <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z"/>
+             </svg>Notify applicant</button>
+              </div>
+           </td>
+         </tr>
+       </tbody>
+     </table>
+     </div>
+     <!-- <p>[{{i+1}}] Application from {{ application.fullNames }} {{ application.lastName }},</p> -->
+       <!-- <p>applied for {{ application.jobAppliedFor}} job</p> -->
+       <div class="View-card">
+         <div class="exit-btn">
+           <button mat-raised-button (click)="closeResume(applications)"  color="primary">close</button>
+         </div>
+     <div *ngFor="let application of alumniData; let i = index">
+      <!-- [alumni]="selectedAlumni" -->
+       <!-- <div *ngIf="selectedAlumni === application"> 
+         <app-alumni-resume [alumni]="selectedAlumni"></app-alumni-resume>
+       </div> -->
+
+       <div *ngIf="selectedAlumni === application && !removeApplication"> 
+        <app-alumni-resume [alumni]="selectedAlumni"></app-alumni-resume>
+      </div>
+      
+   
+     </div>
+     </div> 
+   </div>
+  </div>
+   <app-admin-footer></app-admin-footer>
+   
+    
+     

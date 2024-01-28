@@ -1,0 +1,123 @@
+.card{
+  background-color: #e4dbdb9f;
+  margin-left: 10px;
+  margin-right: 10px;
+  height: auto;
+}
+.container{
+    width: auto;
+    height: auto;
+    margin-left: 10%;
+    margin-right: 10%;
+    background-color: #e4dbdb9f;
+}
+.container h1{
+    text-align: center;
+    font-size: 40px;
+    color: #000;
+}
+.form{
+    padding: 20px;;
+}
+.Actions-btns{
+    display: flex;
+    padding: 20px;
+}
+/* .job-table{ */
+    /* margin-left: 10px; */
+    /* margin-right: 10px; */
+    /* animation-duration: 20ms; */
+    /* background-color: darkblue; */
+    /* padding: 20px;
+    width: auto;
+    height: auto;
+    box-shadow: 5px 5px 5px 5px gray;
+    &.table{
+        width: 200px;
+        height: auto; */
+    /* } */
+/* } */
+.table table{
+    margin-left: 10px;
+    margin-right: 10px; 
+    /* padding-left: 5px;
+    padding-right: 5px; */
+    /* animation-duration: 20ms; */
+    /* background-color: darkblue;  */
+    box-shadow: 5px 5px 5px 5px gray;
+    width: 200px;
+    height: auto;
+}
+.View-card{
+    margin-top: 10px;
+    /* background-image:url('../../../../assets/MTNlogo.png'); */
+    /* background-position: cover; */
+    /* background-repeat: no-repeat; */
+    background-color: #e4dbdb9f;
+    /* transition: all linear 0.5s;   */
+
+
+
+}
+/* Add these styles to your component's CSS file or styles section */
+
+.job-table {
+    width: 100%;
+    overflow-x: auto; /* Enable horizontal scrolling if the table is wider than the container */
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  thead {
+    background-color: #f2f2f2;
+  }
+  
+  .Actions-btns button {
+    margin-left: 5px;
+  }
+  
+  /* Media query for responsiveness */
+  @media (max-width: 768px) {
+    /* Adjust styles for smaller screens */
+    .table {
+      font-size: 14px;
+    }
+  
+    th, td {
+      padding: 6px;
+    }
+  
+    .Actions-btns button {
+      margin-left: 2px;
+    }
+  }
+  .pdf-container {
+    width: 100%;
+    height: 500px; /* Adjust the height as needed */
+  }
+
+  /* exit-btn {
+    margin-top: 10px;
+    margin-bottom: 10px
+  } */
+  /* .button mat-raised-button{
+    margin-bottom: 5px;
+    margin-top: 5px;
+
+  } */
+  /* exit-btn button{
+   margin-top: 5px; 
+   margin-left: 20px;
+   margin-right: 20px; 
+} */
+  

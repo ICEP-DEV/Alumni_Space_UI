@@ -1,0 +1,146 @@
+<!-- Sidenav START -->
+<link rel="stylesheet" href="user-profile-info.component.css">
+    <!-- Advanced filter responsive toggler START -->
+    <div class="d-flex align-items-center d-lg-none">
+        <button class="border-0 bg-transparent" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSideNavbar" aria-controls="offcanvasSideNavbar">
+            <span class="btn btn-primary"><i class="fa-solid fa-sliders-h"></i></span>
+            <span class="h6 mb-0 fw-bold d-lg-none ms-2">My profile</span>
+        </button>
+    </div>
+    <!-- Advanced filter responsive toggler END -->
+    
+    <!-- Navbar START-->
+    <nav class="navbar navbar-expand-lg mx-0"> 
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasSideNavbar">
+            <!-- Offcanvas header -->
+            <div class="offcanvas-header">
+                <button type="button" class="btn-close text-reset ms-auto" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+
+            <!-- Offcanvas body -->
+            <div class="offcanvas-body d-block px-2 px-lg-0">
+                <!-- Card START -->
+                <div class="card overflow-hidden"style="width: 300px; margin-top: 20%;">
+                    <!-- Cover image -->
+                    <div class="h-80px" style="background-image:url(assets/images/bg/01.jpg); background-position: center; background-size: cover; background-repeat: no-repeat;"></div>
+                        <!-- Card body START -->
+                        <div class="card-body pt-0">
+                            <div class="text-center">
+                            <!-- Avatar -->
+                            <div class="avatar avatar-lg mt-n5 mb-3" *ngFor="let picture of pictures">
+                                <img class="avatar-img rounded border border-white border-3" [src]="picture.filePath" alt="" />
+                              </div>
+
+                            <!-- Info -->
+                            <h5 class="mb-0"> <a href="#!">{{name}}  {{surname}}</a> </h5>
+                            <small>Business Anaylst at Tshwane University Of Technology</small>
+                            <p class="mt-3"><b><i>{{alumni.Bio}}</i></b></p>
+
+                            <!-- User stat START -->
+                            <div class="hstack gap-2 gap-xl-3 justify-content-center">
+                                <!-- User stat item -->
+                                <div>
+                                    <h6 class="mb-0">0</h6>
+                                    <small>Post</small>
+                                </div>
+                                <!-- Divider -->
+                                <div class="vr"></div>
+                                <!-- User stat item -->
+                                <div>
+                                    <h6 class="mb-0">{{ followerCount }}</h6>
+                                    <small>Followers</small>
+                                </div>
+                                <!-- Divider -->
+                                <div class="vr"></div>
+                                <!-- User stat item -->
+                                <div>
+                                    <h6 class="mb-0">{{ followingCount }}</h6>
+                                    <small>Following</small>
+                                </div>
+                            </div>
+                            <!-- User stat END -->
+                        </div>
+
+                        <!-- Divider -->
+                        <hr>
+
+                        <!-- Side Nav START -->
+                        <ul class="nav nav-link-secondary flex-column fw-bold gap-2">
+                    
+                            <li class="nav-item">
+                                <a class="nav-link" href="my-profile-connections.html"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
+                                    <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7Zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216ZM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/>
+                                  </svg> <span style="padding-left: 5px;">Connections </span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" routerLink="/alumni/events"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-event-fill" viewBox="0 0 16 16">
+                                    <path d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v1h16V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4V.5zM16 14V5H0v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2zm-3.5-7h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5z"/>
+                                  </svg> <span style="padding-left: 5px;">Events </span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="groups.html"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-collection-fill" viewBox="0 0 16 16">
+                                    <path d="M0 13a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 16 13V6a1.5 1.5 0 0 0-1.5-1.5h-13A1.5 1.5 0 0 0 0 6v7zM2 3a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 0-1h-11A.5.5 0 0 0 2 3zm2-2a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 0-1h-7A.5.5 0 0 0 4 1z"/>
+                                  </svg> <span style="padding-left: 5px;">Groups </span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" routerLink="/alumni/tract-application/" > <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-collection-fill" viewBox="0 0 16 16">
+                                    <path d="M0 13a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 16 13V6a1.5 1.5 0 0 0-1.5-1.5h-13A1.5 1.5 0 0 0 0 6v7zM2 3a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 0-1h-11A.5.5 0 0 0 2 3zm2-2a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 0-1h-7A.5.5 0 0 0 4 1z"/>
+                                  </svg> <span style="padding-left: 5px;">Track My Application </span></a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" routerLink="/alumni/notifications"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bell-fill" viewBox="0 0 16 16">
+                                    <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z"/>
+                                  </svg> <span style="padding-left: 5px;">Notifications </span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" routerLink="/alumni/queries/"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-square-fill" viewBox="0 0 16 16">
+                                    <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm8.93 4.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM8 5.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+                                  </svg> <span> Help</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" (click)="logout()"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
+                                    <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
+                                  </svg> <span style="padding-left: 5px;">Logout</span></a>
+                            </li>
+                        </ul>
+                        <!-- Side Nav END -->
+                    </div>
+                    <!-- Card body END -->
+                    <!-- Card footer -->
+                    <div class="card-footer text-center py-2">
+                        <a class="btn btn-link btn-sm" href="/alumni/profile/view-profile">View Profile </a>
+                    </div>
+                </div>
+                <!-- Card END -->
+
+                <!-- Helper link START -->
+                <ul class="nav small mt-4 justify-content-center lh-1" style="width: 300px">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.tut.ac.za/alumni-tut/about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="settings.html">Settings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" target="_blank" href="https://www.tut.ac.za/heds/sds/about">Support </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="help.html">Help</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.tut.ac.za/other/disclaimers/terms-and-conditions">Privacy & terms</a>
+                    </li>
+                </ul>
+                <!-- Helper link END -->
+                <!-- Copyright -->
+                <p class="small text-center mt-1" style="width:300px; font-weight: bold" >©2023 <a class="text-body" target="_blank" href="https://www.tut.ac.za/"> TUT_Alumni Space </a></p>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar END-->
+
+<!-- Sidenav END -->
+<style>
+
+</style>

@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet"  href="./events.component.css">
+</head>
+<body>
+  <header class="header">
+    
+    
+    <div class="logo">
+      <img src="/assets/tutL.jpg" class="logo" style="height: 55px;" />
+      <div class="text-container">
+          <p><b>TUT<br> Alumni_Space</b></p>
+      </div>
+      <img src="/assets/alumni.png" class="logo2" style="height: 55px;">
+    </div>
+    
+
+    <div class="nav-menu">
+        <ul><b>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">My Profile</a></li>
+            <li><a href="#">My Network</a></li>
+            <li><a href="#">Opportunities</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">Notification</a></li>
+            <li><a href="#">Logout</a></li>
+          </b>
+        </ul>
+    </div>
+    
+
+</header>
+<div class="top-button">
+  <button type="button" style="background: none; border: none; cursor: pointer;"><svg xmlns="http://www.w3.org/2000/svg" (click)=" returnHome()" width="30" height="30" fill="currentColor" class="bi bi-arrow-left-square" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm11.5 5.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
+  </svg>Go home</button>
+  
+</div>
+
+<div class="header-text">
+  <h2>Events</h2>
+  <h4>Attend event now, what are you waiting for!</h4>
+</div>
+<br>
+<div *ngFor="let  event of events" class="event-item">
+  
+  <img *ngIf="event.event_file" [src]="getEventPictureUrl(event.event_file)" alt="{{ event.title }}" style="max-width: 200px; height: 200px;" >
+  <div class="event-details">
+    <h3>{{ event.title }}</h3>
+    <p>{{ event.event_description }}</p>
+    <p><b>Posted On:</b> {{ currentDate | date:'fullDate' }} ({{ getTimeDifference(event.datePosted) }})</p>
+  </div>
+</div> 
+
+
+
+<!-- <div class="top-button">
+  <button type="button" style="background: none; border: none; cursor: pointer;"><svg xmlns="http://www.w3.org/2000/svg" (click)=" returnHome()" width="30" height="30" fill="currentColor" class="bi bi-arrow-left-square" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm11.5 5.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
+  </svg>Go home</button>
+  
+</div> -->
+
+</body>
+</html>

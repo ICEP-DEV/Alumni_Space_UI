@@ -1,0 +1,21 @@
+<!-- <p>job-interview-status-dialog works!</p> -->
+<div class="card">
+    <h2>Finalize Job Application</h2>
+     <p>Interview Done for: {{data.jobTitle}} job  with {{data.firstname}} {{data.surname}}</p>
+    <mat-dialog-content>
+      <mat-form-field>
+        <mat-label>Interview Status</mat-label>
+         <select matNativeControl required [(ngModel)]="applicationStatus">
+          <option value="Hired">Hired</option>
+          <option value="Rejected">Rejected</option>
+          <option value="Pending">Pending..</option>
+          <option value="Did not pitch for interview(rejected)">Did not pitch for interview</option>
+
+         </select>
+        </mat-form-field>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+      <button mat-raised-button (click)="onCancelClick()" color="warn">Cancel</button>
+      <button mat-raised-button (click)="onConfirmClick()" color="primary" cdkFocusInitial>Confirm</button>
+    </mat-dialog-actions>
+</div>

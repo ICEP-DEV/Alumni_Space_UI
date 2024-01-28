@@ -1,0 +1,45 @@
+
+<link rel="stylesheet" href="../query/query.component.css">
+<app-navbar></app-navbar>
+<div class="card">
+<div class="container-fluid">
+<h1>Admin Queries</h1>
+<table>
+  <tr>
+    <th>Alumni</th>
+    <th>Query</th>
+    <th>Status</th>
+    <th>Action</th>
+  </tr>
+  <tr *ngFor="let row of data; let i = index">
+    <td>{{ row.user }}</td>
+    <td>{{ row.query }}</td>
+    <td>{{ row.status }}</td>
+    <td>
+      <button type="button" class="btn btn-outline-primary" (click)="toggleResponseForm(i)">Respond</button>
+      <div class="response-form" [ngStyle]="{ display: responseForms[i] ? 'block' : 'none' }">
+        <textarea [(ngModel)]="row.response"></textarea>
+        <button type="button" class="btn btn-primary" (click)="submitResponse(i)">Submit</button>
+      </div>
+    </td>
+  </tr>
+  <tr *ngFor="let row of queries; let i = index">
+    <td>{{ row.alumni_name }} {{ row.alumni_surname }}</td>
+    <td>{{ row.query_text }}</td>
+    <td>
+      {{ row.status }}
+      <span *ngIf="row.timestamp"> - {{ row.timestamp | date: 'medium' }}</span>
+    </td>
+    <td>
+      <button type="button" class="btn btn-outline-primary" (click)="toggleResponseForm(i)">Respond</button>
+      <div class="response-form" [ngStyle]="{ display: responseForms[i] ? 'block' : 'none' }">
+        <textarea [(ngModel)]="row.response"></textarea>
+        <button type="button" class="btn btn-primary" (click)="submitResponse1(i,row)">Submit</button>
+      </div>
+    </td>
+  </tr>
+  
+</table>
+</div>
+</div>
+<app-admin-footer></app-admin-footer>

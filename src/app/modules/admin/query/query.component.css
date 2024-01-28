@@ -1,0 +1,45 @@
+.card{
+    background-color: #e4dbdb9f;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 700px;
+}
+
+.container-fluid{
+    height: auto;
+    width: auto;
+    /* box-shadow: 3px 3px 3px 3px blue; */
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    background-color: #e4dbdb9f;
+}
+.container-fluid h1{
+    text-align: center;
+    font-size: 30px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+th {
+    background-color: #ddd;
+    color: white;
+}
+
+.response-form {
+    display: none;
+}

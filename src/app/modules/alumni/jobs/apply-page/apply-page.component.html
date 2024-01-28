@@ -1,0 +1,22 @@
+<!-- apply-page.component.html -->
+
+<link rel="stylesheet" type="text/css" href="apply-page.component.css" />
+<div class="apply-container">
+    <h2>Job Application Form (Easy Apply)</h2>
+  
+    <form #form="ngForm" (ngSubmit)="submitForm(form)">
+      <label for="fullName">Full Name:</label>
+      <input type="text" id="name" name="name" [(ngModel)]="name" readonly required>
+  
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" [(ngModel)]="email" required>
+
+      <label for="idDocument">ID</label>
+      <input type="file" id="idDocument" name="idDocument" accept=".pdf" (change)="handleFileInput($event)" required>
+      
+      <label for="additionalDocuments">Additional Documents</label>
+      <input type="file" id="additionalDocuments" name="additionalDocuments" accept=".pdf" (change)="handleFileInput2($event)" required>
+  
+      <button type="submit">Submit</button>
+    </form>
+</div>

@@ -1,0 +1,18 @@
+
+<!-- imagediplay.component.html -->
+
+<div>
+    <!-- Event Form -->
+    <form [formGroup]="eventForm" (ngSubmit)="onPost()">
+  
+      <label for="eventDescription">Post Description:</label>
+      <textarea id="eventDescription" formControlName="eventDescription"></textarea>
+  
+      <label for="imageUpload">Post Image:</label>
+      <input type="file" id="imageUpload" (change)="onImageChange($event)" />
+  
+      <button type="submit">Post</button>
+    </form>
+ 
+  </div> 
+  

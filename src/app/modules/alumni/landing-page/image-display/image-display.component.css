@@ -1,0 +1,48 @@
+/* imagediplay.component.css */
+
+/* Container styling */
+div {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  /* Form styling */
+  form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+  
+  /* Label styling */
+  label {
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  
+  /* Textarea styling */
+  textarea {
+    height: 100px;
+    margin-bottom: 16px;
+    padding: 8px;
+    resize: vertical; /* Allow vertical resizing */
+  }
+  
+  /* File input styling */
+  input[type="file"] {
+    margin-bottom: 16px;
+  }
+  
+  /* Button styling */
+  button {
+    background-color: #1877f2; /* Facebook blue */
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+  }
+  
+  /* Button hover effect */
+  button:hover {
+    background-color: #145493; /* Darker shade on hover */
+  }
+  
