@@ -12,6 +12,8 @@ import {SuccessComponent} from './components/success/success.component';
 import {SuccessPasswordChangeComponent} from './components/auth/success-password-change/success-password-change.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ApplyPageComponent } from './modules/alumni/jobs/apply-page/apply-page.component';
+import { AlumniDetailsComponent } from './modules/admin/alumni-details/alumni-details.component';
+
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -40,9 +42,9 @@ const routes: Routes = [
   { path: 'success-password-change', component: SuccessPasswordChangeComponent },
   { path: 'reset-password', component: ResetPasswordComponent },
   {path: 'register', component: RegisterComponent},
-  {path: 'apply-page', component: ApplyPageComponent}
+  {path: 'apply-page', component: ApplyPageComponent},
   
-  
+  {path: 'alumni-details', component: AlumniDetailsComponent},
 ];
 
 @NgModule({

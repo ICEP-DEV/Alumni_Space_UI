@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AlumniService } from '../../../services/alumni/alumni.service'
 @Component({
   selector: 'app-all-alumnus',
   templateUrl: './all-alumnus.component.html',
@@ -7,36 +8,10 @@ import { Router } from '@angular/router';
 })
 export class AllAlumnusComponent {
 
-  constructor(private _router: Router) { }
+  constructor(private _router: Router, private alumniService: AlumniService) { }
 
-  Alumnus = [{
-    name: "Manasoe DJ", company: "ICEP", role: "Developer", image: "../../../../assets/dipono/dipono.jpeg", privious: [{
-      company: "ICEP", role: "Intern Software Developer",
-      startDate: "2020-Dec", endDate: "2021-Nov"
-    }, {
-      company: "MLAB", role: "Web and Developer",
-      startDate: "2022-May", endDate: "2022-Nov"
-    }, {
-      company: "ICEP", role: "Developer and Lead Team",
-      startDate: "2023-Mar", endDate: "2024-Jan"
-    }]
-  },
-
-  {
-    name: "Mathonsi X", company: "ICEP", role: "BA", image: "../../../../assets/dipono/Xolly.jpg", privious: [{
-      company: "TUT", role: "Tutor",
-      startDate: "2017-Mar", endDate: "2017-Dec"
-    }, {
-      company: "TUT", role: "SGLD Peer Facilitator",
-      startDate: "2018-Jan", endDate: "2019-Dec"
-    }, {
-      company: "ICEP", role: "Business Analyst",
-      startDate: "2019-Feb", endDate: "2021-Nov"
-    }]
-  },
-
-  {
-    name: "Makena LB", company: "AWS", role: "Tester", image: "../../../../assets/dipono/profilepng.png", privious: [{
+  Alumnus: any /*[{
+    name: "Manasoe DJ", company: "ICEP", role: "Developer", image: "../../assets/profilejpg.jpg", privious: [{
       company: "TUT", role: "Lecturer",
       startDate: "2017-Mar", endDate: "2017-Dec"
     }, {
@@ -49,23 +24,66 @@ export class AllAlumnusComponent {
   },
 
   {
-    name: "Malobane P", company: "ICEP", role: "Developer", image: "../../../../assets/dipono/Patience.jpg", privious: [{
-      company: "TUT", role: "Student",
-      startDate: "2020-Mar", endDate: "2023-Dec"
+    name: "Maluleke T", company: "ICEP", role: "BA", image: "../../assets/profile2png.png", privious: [{
+      company: "TUT", role: "Lecturer",
+      startDate: "2017-Mar", endDate: "2017-Dec"
     }, {
-      company: "ICEP", role: "Web and Developer",
-      startDate: "2023-AUG", endDate: "2024-Jan"
-    },]
+      company: "MLAB", role: "Web and Developer",
+      startDate: "2018-Jan", endDate: "2019-Dec"
+    }, {
+      company: "Sasol", role: "Patrol Attendance",
+      startDate: "2019-Feb", endDate: "2021-Nov"
+    }]
+  },
+
+  {
+    name: "Makena LB", company: "Spar", role: "Cashier", image: "../../assets/profile3png.png", privious: [{
+      company: "TUT", role: "Lecturer",
+      startDate: "2017-Mar", endDate: "2017-Dec"
+    }, {
+      company: "MLAB", role: "Web and Developer",
+      startDate: "2018-Jan", endDate: "2019-Dec"
+    }, {
+      company: "Sasol", role: "Patrol Attendance",
+      startDate: "2019-Feb", endDate: "2021-Nov"
+    }]
+  },
+
+  {
+    name: "Malebane TK", company: "ICEP", role: "Tester", image: "../../assets/profilejpg.jpg", privious: [{
+      company: "TUT", role: "Lecturer",
+      startDate: "2017-Mar", endDate: "2017-Dec"
+    }, {
+      company: "MLAB", role: "Web and Developer",
+      startDate: "2018-Jan", endDate: "2019-Dec"
+    }, {
+      company: "Sasol", role: "Patrol Attendance",
+      startDate: "2019-Feb", endDate: "2021-Nov"
+    }]
+  }]*/
+  message = ""
+  Alumni_Temp: any
+  ngOnInit() {
+    this.message = ""
+    this.alumniService.getAllAlumni().subscribe((respond) => {
+      this.Alumni_Temp = respond
+      if (this.Alumni_Temp.success) {
+        console.log(this.Alumni_Temp.result)
+        this.Alumnus = this.Alumni_Temp.result
+      }
+      else {
+        this.message = this.Alumni_Temp.message
+      }
+    }, err => {
+      console.log(err)
+    })
   }
-  ]
-
-
 
 
   getAlumniInfo(info: any) {
     console.log(info)
     localStorage.setItem('alumni_info', JSON.stringify(info))
-    this._router.navigate(['/admin/alumni-details'], { state: { info } })
+    this._router.navigate(['/alumni-details'], { state: { info } })
 
   }
 }

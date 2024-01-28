@@ -8,14 +8,18 @@ import { baseUrl } from 'config';
 })
 export class AlumniService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private _http:HttpClient) { }
 
-  //private apiUrl = 'http://localhost:3000/api/count_alumni';
-  
+  api = "http://localhost:3000/"
 
- 
+  getAllAlumni(){
+    return this._http.get(this.api+'get_all_users');
+  }
 
+  getAlumniDetails(alumni_id:Number){
+    return this._http.get(this.api+'get_user_details/'+alumni_id);
+  }
   getAlumniCount(): Observable<any> {
-    return this.http.get<any>(`${baseUrl}/count_alumni`);
+    return this._http.get<any>(`${baseUrl}/count_alumni`);
   }
 }
