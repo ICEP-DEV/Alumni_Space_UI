@@ -27,26 +27,21 @@
                 <input type="text" id="alumni_location" class="form-control" aria-label="Sizing example input"
                     aria-describedby="inputGroup-sizing-default" [(ngModel)]="alumni.Location" name="alumni.Location">
             </div>
-            <div class="input-group mb-3">
+            <!-- <div class="input-group mb-3">
                 <span class="input-group-text" id="inputGroup-sizing-default">Qualification:</span>
                 <input type="text" id="alumni_qualification" class="form-control" aria-label="Sizing example input"
                     aria-describedby="inputGroup-sizing-default" [(ngModel)]="alumni.Qualification" name="alumni.Qualification">
-            </div>
+            </div> -->
             <!-- <div class="input-group mb-3">
                 <span class="input-group-text" id="inputGroup-sizing-default">Skills:</span>
                 <input type="text" id="alumni_skills" class="form-control" aria-label="Sizing example input"
                     aria-describedby="inputGroup-sizing-default" [(ngModel)]="alumni.Skills" name="alumni.Skills">
             </div> -->
             <!--new skills field-->
-            <div class="input-group mb-3">
-               <!--<label for="skills">Skills:</label><br>-->
+            <!-- <div class="input-group mb-3">
                <span class="input-group-text" id="inputGroup-sizing-default">Skills:</span> 
                 <input type="text" id="skills" name="alumni.skills" class="form-control" aria-label="Sizing example input"
                 aria-describedby="inputGroup-sizing-default" [(ngModel)]="newSkill">
-                <!-- <button (click)="addNewSkill()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
-                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-                  </svg> Add More</button> -->
 
                   <button (click)="addNewSkill()" style="background: none; border: none; cursor: pointer;">
                     <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
@@ -54,27 +49,22 @@
                       <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
                     </svg>
                   </button>
-              </div>
+              </div> -->
               <!--add more skills-->
-              <div *ngFor="let skill of skills; let i = index">
+              <!-- <div *ngFor="let skill of skills; let i = index">
                 <div class="input-group mb-3" style="width: 20vh; margin-left: 80%;">
                 <input type="text" [id]="'skills' + i" [name] ="'skills' + i " class="form-control" aria-label="Sizing example input"
                 aria-describedby="inputGroup-sizing-default" [value]="skill">
                  {{i+1}}
-              </div>
-            </div>
+              </div> 
+            </div>-->
 
 
             <!---work histor-->
-            <div class="input-group mb-3">
-              <!--<label for="skills">Skills:</label><br>-->
+            <!-- <div class="input-group mb-3">
               <span class="input-group-text" id="inputGroup-sizing-default">WORK:</span> 
                <input type="text" id="skills" name="alumni.skills" class="form-control" aria-label="Sizing example input"
                aria-describedby="inputGroup-sizing-default" [(ngModel)]="newSkill">
-               <!-- <button (click)="addNewSkill()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
-                   <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                   <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-                 </svg> Add More</button> -->
 
                  <button (click)="addNewSkill()" style="background: none; border: none; cursor: pointer;">
                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
@@ -82,15 +72,15 @@
                      <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
                    </svg>
                  </button>
-             </div>
+             </div> -->
              <!--add more skills-->
-             <div *ngFor="let skill of skills; let i = index">
+             <!-- <div *ngFor="let skill of skills; let i = index">
                <div class="input-group mb-3" style="width: 20vh; margin-left: 80%;">
                <input type="text" [id]="'skills' + i" [name] ="'skills' + i " class="form-control" aria-label="Sizing example input"
                aria-describedby="inputGroup-sizing-default" [value]="skill">
                 {{i+1}}
              </div>
-           </div>
+           </div> -->
                   
             <!-- <div class="input-group mb-3">
                 <span class="input-group-text" id="inputGroup-sizing-default">Experience:</span>
@@ -98,7 +88,7 @@
                     aria-describedby="inputGroup-sizing-default" [(ngModel)]="alumni.Experience" name="alumni.Experience">
             </div> -->
 
-            <div class="input-group mb-3">
+            <!-- <div class="input-group mb-3">
             <span class="input-group-text" style="width: 25vh;" id="inputGroup-sizing-default">Experience:</span>
             <select class="form-select" id="employment_status" aria-label="Default select example" [(ngModel)]="alumni.Experience" name="alumni.Experience">
                 <option selected>Select experience</option>
@@ -108,14 +98,14 @@
                 <option value="4">3 years or above</option>
                 <option value="5">none of the above</option>
               </select>
-            </div>
+            </div> -->
             <!-- <div class="input-group mb-3">
                 <span class="input-group-text" id="inputGroup-sizing-default">Employment Status:</span>
                 <input type="text" id="alumni_employ_status" class="form-control" aria-label="Sizing example input"
                     aria-describedby="inputGroup-sizing-default" [(ngModel)]="alumni.Employment_Status" name="alumni.Employment_Status">
             </div> -->
 
-            <div class="input-group mb-3">
+            <!-- <div class="input-group mb-3">
             <span class="input-group-text" style="width: 25vh;" id="inputGroup-sizing-default">Employment Status:</span>
             <select class="form-select" id="employment_status" aria-label="Default select example" [(ngModel)]="alumni.Employment_Status" name="alumni.Employment_Status">
                 <option selected>Select employment status</option>
@@ -123,7 +113,7 @@
                 <option value="unemployed">Unemployed</option>
                 <option value="none">None</option>
               </select>
-            </div>
+            </div> -->
 
             <div class="input-group mb-3">
                 <span class="input-group-text" id="inputGroup-sizing-default">Interest:</span>
@@ -172,8 +162,8 @@
                      </div>
                     </div>
                     <br>
-                    <h5 style="text-align: center;">Academic Achievements</h5>
-                    <h6>Upload certificate:</h6>
+                    <h5 style="text-align: center;">Image</h5>
+                    <h6>Upload Image:</h6>
                     
                          <!-- <input type="file" (change)="onCertificateChange($event, 1)" class="form-control" id="aumni_certificate" aria-describedby="inputGroupFileAddon04" aria-label="Upload"> -->
                         <!-- <button [disabled]="!certificateChosen" class="btn btn-outline-secondary" type="submit" id="inputGroupFileAddon04" (click)="saveCertificate()">Save</button> -->
@@ -229,7 +219,7 @@
                           <!-- </div> -->
                            <div *ngFor="let certificate of certificates; let i = index">
                             <div class="input-group mb-3">
-                              <input type="text" [(ngModel)]="certificateNames[i]" name="certificateNames[i]" placeholder="Certificate Name">
+                              <input type="text" [(ngModel)]="certificateNames[i]" name="certificateNames[i]" placeholder="profile Image">
                             </div>
                             <input type="file" accept=".docx, application/pdf" (change)="onCertificateChange($event, -1,i)" class="form-control" id="certificates[i]" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
                             <small *ngIf="fileTypeErrorCertif" style="color: red;">{{ fileTypeErrorCertif }}</small>
@@ -242,7 +232,7 @@
                              </div>
                           </div>
                           
-                          <button [disabled]="isSaveClicked" class="btn btn-outline-secondary" type="submit" id="inputGroupFileAddon04" (click)="saveCertificates()">Save Certificate(s)</button>
+                          <button [disabled]="isSaveClicked" class="btn btn-outline-secondary" type="submit" id="inputGroupFileAddon04" (click)="saveCertificates()">Save Image</button>
                           <!-- <button [disabled]="!certificateChosen" class="btn btn-outline-secondary" type="submit" id="inputGroupFileAddon04" (click)="saveCertificate()">Save</button> -->
                         
 
@@ -253,12 +243,12 @@
                             </svg>
                           </button> -->
                           
-                          <button [disabled]="isSaveClicked" (click)="addCertificateField()" style="background: none; border: none; cursor: pointer;">
+                          <!-- <button [disabled]="isSaveClicked" (click)="addCertificateField()" style="background: none; border: none; cursor: pointer;">
                             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
                               <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
                               <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-                            </svg>
-                          </button>
+                            </svg> 
+                          </button>-->
                           <!-- <button [disabled]="!certificateChosen" class="btn btn-outline-secondary" type="submit" id="inputGroupFileAddon04" (click)="saveCertificate()">Save</button> -->
                          
                           <!-- <div *ngIf="isBtnSaveCertificate" class="confirmation">

@@ -22,15 +22,6 @@ export class ViewProfileComponent {
   alumni = {
     Name: "name placeholder",
     Surname: 'surname',
-    Location: "location placeholder",
-    Qualification: "Qualification placeholder",
-    Skills: "Skills placeholder",
-    Experience: " Experience placeholder",
-    Employment_Status: "Employment_Status placeholder",
-    Academic_Transcript: "Academic_Transcript placeholder",
-    Interest: "Interest placeholder",
-    Bio: "bio placeholder",
-
   }
   //snackbar
   showSnackbar(message: string) {
@@ -42,7 +33,9 @@ export class ViewProfileComponent {
     });
   }
   certificates: any[] = [];
+  Email: any
   icounter = 0;
+  Alumni_profile: any
 
 
   constructor(private http: HttpClient, private router: Router, private ProfileService: ProfileService, private sanitizer: DomSanitizer, private snackBar: MatSnackBar) {
@@ -55,33 +48,15 @@ export class ViewProfileComponent {
     const storedName = localStorage.getItem('name');
     const storedSurname = localStorage.getItem('surname');
     const user_id = localStorage.getItem('account_id');
-
+    this.Email = localStorage.getItem('email');
     console.log('User_id:' + user_id);
 
     //get profile details from server
     this.http.put(`${this.apiUrl}/get_profile`, { user_id }).subscribe((response: any) => {
       console.log('Data sent to server:', response);
-
+      this.Alumni_profile = response.result[0]
       //this.alumni.Skills = response.userprofile.skills;
-      console.log(response.result[0].skills);
-
-
-      //check if values are null
-      if (response.result[0].skills === '' || response.result[0].experience === '' || response.result[0].interest === '' || response.result[0].bio === '' || response.result[0].location === '' ||
-        response.result[0].qualification === '' || response.result[0].employment_status === '') {
-
-        this.showSnackbar('Profile Incomplete, Please update profile');
-      }
-
-      //display profile
-      this.alumni.Skills = response.result[0].skills;
-      this.alumni.Experience = response.result[0].experience;
-      this.alumni.Interest = response.result[0].interest;
-      this.alumni.Bio = response.result[0].bio;
-
-      this.alumni.Location = response.result[0].location;
-      this.alumni.Qualification = response.result[0].qualification;
-      this.alumni.Employment_Status = response.result[0].employment_status;
+      console.log(response.result[0]);
 
 
     });
@@ -99,6 +74,10 @@ export class ViewProfileComponent {
       this.alumni.Surname = storedSurname;
     }
   }
+
+  editProfile(){
+    this.router.navigate([''])
+  }
   deleteCertificate(index: number, certificateId: any) {
     // this.certificateNames[i].delete()
     if (index !== -1) {
@@ -111,7 +90,7 @@ export class ViewProfileComponent {
       this.showSnackbar('Certificate deleted successfully!');
     }
   }
- 
+
   getDocuments(docFile: String) {
     return `${filesUrl}/uploads/docs/certs/${docFile}`;
   }

@@ -16,16 +16,30 @@
     <h1 class="text-center">Alumni Profile</h1>
     <hr>
     <div class="user-info">
-
+      <button #edit type="submit" style="margin-left: 45%" class="btn btn-outline-info"
+        routerLink="/alumni/profile/edit-profile">Edit
+        Profile</button>
 
       <div class="user-cred">
-        <p>Name: <b>{{ alumni.Name }} {{alumni.Surname}}</b></p>
-        <p>Address: {{ alumni.Location }}</p>
+        <tr>
+          <td>Name </td><td>: <b>{{ alumni.Name }} {{alumni.Surname}}</b></td>
+        </tr>
+        <tr>
+          <td>Email Address </td><td>: <b>{{ Email }}</b></td>
+        </tr>
+        <tr>
+          <td>Location </td><td>: <b>{{ Alumni_profile.location }}</b></td>
+        </tr>
+        <tr>
+          <td>Bio </td><td>: <b>{{ Alumni_profile.bio }}</b></td>
+        </tr>
+
+        <!-- <p>Address: {{ alumni.Location }}</p>
         <p>Qualification: {{ alumni.Qualification }} </p>
         <p>Skills: {{ alumni.Skills }}</p>
         <p>Experience: {{ alumni.Experience }}</p>
         <p>Employment Status: {{ alumni.Employment_Status }}</p>
-        <p>Interest: {{alumni.Interest}}</p>
+        <p>Interest: {{alumni.Interest}}</p> -->
       </div>
 
       <div class="card-text ">
@@ -46,9 +60,7 @@
                   </svg></i><br>
                 Click here to view certificate
               </a>
-              <button type="button" style="margin-left: 50%; margin-top: 5px;"
-                (click)="deleteCertificate(i, certificate.certificateId)"
-                class="btn btn-outline-primary">remove</button>
+              
             </li>
           </ul>
         </div>
@@ -58,9 +70,7 @@
     <div class="edit-profile">
       <hr>
       <!-- <button type="button" class="btn btn-primary" ng-click="vm.editProfile()">Edit Profile</button> -->
-      <button #edit type="submit" style="margin-left: 45%" class="btn btn-outline-info"
-        routerLink="/alumni/profile/edit-profile">Edit
-        Profile</button>
+      
     </div>
     <app-work-experience></app-work-experience>
   </div>
