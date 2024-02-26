@@ -1,0 +1,15 @@
+footer {
+    background-color: black;
+    height: 100px;
+    display: flex;
+    color: white;
+}
+
+.footer_navigation {
+    display: flex;
+}
+
+.copyright {
+    margin: 30px 100px;
+    width: 50%;
+}
