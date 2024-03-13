@@ -1,0 +1,59 @@
+#alumni_profile {
+  display: flex;
+}
+
+#admin_details {
+  width: 80%;
+}
+
+#admin_image {
+  width: 40%;
+}
+
+#admin_image img {
+  width: 200px;
+
+}
+
+.display_alumni_info {
+  margin: 10px 0;
+}
+
+.display_alumni_info_label {
+  width: 40%;
+}
+
+#alumni_table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#alumni_table td,
+#alumni_table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#alumni_table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#alumni_table tr:hover {
+  background-color: #ddd;
+}
+
+#alumni_table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+
+.interest_label {
+  background-color: rgba(54, 53, 53, 0.664);
+  padding: 5px 10px 5px 5px;
+  border-radius: 9px;
+  font-family: 500;
+}

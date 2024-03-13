@@ -1,0 +1,155 @@
+.popup-modal {
+    position: fixed;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+}
+
+.popup-dialog {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    width: 500px;
+    height: 700px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    transition: transform 0.5s ease, height 0.2s ease;
+}
+
+.form-wrapper {
+    margin-top: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+.event-form {
+    text-align: left;
+    height: 80%;
+    overflow-y: scroll;
+}
+
+.display-events{
+    width: 80%;
+    margin: auto;
+    margin-top: 50px;
+}
+
+
+.poster {
+    display: flex;
+    border-bottom: 2px solid gray;
+    padding: 2px;
+    width: 100%;
+}
+
+.poster:hover{
+    background-color: rgba(128, 128, 128, 0.705);
+    color: white;
+}
+
+#poster-image{
+ width: 15%;
+ text-align: center;
+ margin: auto;
+}
+
+#poster-image img{
+    width: 150px;
+    height: 100px;
+
+   }
+
+#poster-date {
+    border: 2PX solid grey;
+    padding: 0 30px;
+    text-align: center;
+    background-color: rgba(0, 183, 255, 0.438);
+    width: 15%;
+    margin: auto;
+   border-bottom: none;
+   border-top: none;
+}
+
+#poster-info{
+    margin: 20px;
+    width: 50%;
+    margin: auto;
+}
+
+#separator{
+    margin: 0 10px;
+    border: 2px solid black;
+}
+
+#poster-operation{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.poster-operation{
+    margin: 50px 10px;
+}
+
+#close-popup{
+    text-align: right;
+}
+
+#x-cancel{
+    background-color: rgb(255, 51, 0);
+    padding: 5px;
+    font-size: 2em;
+}
+
+.event-head{
+    display: flex;
+    justify-content: space-between;
+}
+
+.event-head img{
+    width: 200px;
+    height: 150px;
+}
+
+.display-form{
+    display: flex;
+    margin: 10px;
+    
+}
+
+.label-field{
+    width: 40%;
+}
+
+.field-input{
+    width: 60%;
+    font-weight: 500;
+}
+
+.btn-operation{
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-cancel-delete{
+    background-color: rgba(0, 0, 0, 0.384);
+    
+}
+
+.btn-delete{
+    width: 200px;
+    border-radius: 12px;
+}
+
+.edit-eventedit-event{
+    height: 80vh;
+    overflow-y: auto;
+}

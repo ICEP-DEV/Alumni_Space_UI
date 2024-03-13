@@ -1,0 +1,38 @@
+
+.section{
+    margin: 20px;
+
+}
+
+.headercard{
+    background-color: rgb(95, 95, 160);
+    display: flex;
+}
+
+.alumniDash_upper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.alumniDash_upper_card {
+    display: flex;
+    background-color: rgba(58, 58, 189, 0.712);
+    text-align: center;
+    width: 20%;
+    margin: 10px;
+    padding: 5px 50px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.alumniDash_upper_card:nth-child(even) {
+    background-color: #e4e735c4;
+}
+
+
+.headercardicon{
+    width: 10%;
+    margin: auto;
+    text-align: right;
+}

@@ -1,0 +1,31 @@
+.pie-display{
+    width: 20%;
+}
+
+.summary_results{
+   border: 2px solid grey;
+}
+
+.each_results{
+     display: flex;
+    
+}
+.bar-display{
+    width: 30%;
+    margin: 5%;
+}
+
+.info-display{
+    margin-top: 2%;
+    margin-left: 10%;
+}
+
+#color_circle{
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 100%;
+}
+
+.results-info{
+    margin: 10px ;
+}

@@ -1,0 +1,53 @@
+.forum{
+    overflow-y: auto;
+    display: flex;
+}
+
+.forum-left{
+    width: 30%;
+    height: 80vh;
+    overflow-y: auto;
+    border-right: 2px solid grey;
+    padding-right: 2px;
+}
+.forum-right{
+    width: 70%;
+    height: 80vh;
+    overflow-y: auto;
+}
+
+.forum-topic{
+    margin: 2px 0;
+    border-left: none;
+    
+}
+
+.forum-topic-btn{
+    text-align: left;
+    background-color: rgb(145, 145, 145);
+    color: black;
+}
+
+.forum-profile{
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+}
+
+.forum-message{
+    background-color: rgba(51, 48, 48, 0.116);
+    display: inline-block;
+    margin: 50px;
+    padding: 10px;
+    border-radius: 12px;
+}
+
+.forum-datetime{
+    font-size: 0.8em;
+}
+
+.forum-message img{
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+}

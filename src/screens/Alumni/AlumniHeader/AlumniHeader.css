@@ -31,6 +31,9 @@ li {
     text-decoration: none;
 }
 
+.link_nav:hover {
+    cursor: pointer;
+}
 
 
 
@@ -38,7 +41,12 @@ li {
 .hover-component {
     position: fixed;
     top: 50%;
+    /* Adjust the top position as needed */
     left: 50%;
+    /* Adjust the left position as needed */
+    /* background-color: #fff; */
+
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); */
 }
 
 .wrapper {
@@ -119,16 +127,6 @@ li {
     margin: 20px;
 }
 
-.form-group label {
-
-    padding-top: 20px;
-    font-size: 1em;
-    color: #000000;
-    font-weight: 500;
-    pointer-events: none;
-}
-
-
 .form-group input {
     background: transparent;
     border: none;
@@ -141,6 +139,7 @@ li {
 }
 
 .form-group .icon {
+    /* position: absolute; */
     right: 8px;
     font-size: 1.2em;
     color: #000000;
@@ -149,4 +148,10 @@ li {
 
 .nav-link {
     color: blue;
+}
+
+@media screen and (max-width: 1500px) {
+    .link_nav{
+        font-size: 0.8em;
+    }
 }

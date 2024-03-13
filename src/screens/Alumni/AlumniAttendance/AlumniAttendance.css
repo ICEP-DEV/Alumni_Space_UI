@@ -1,0 +1,50 @@
+.attandance-option{
+    margin: 30px 20px;
+    font-size: 1.2em;
+    font-weight: 500;
+} 
+
+.attandance-option .label-attend{
+    width: 30%;
+}
+
+.attandance-option span{
+    margin-left: 100px;
+}
+
+.attandance-option span label{
+    margin: 10px;
+}
+
+.payment-method{
+    text-align: center;
+}
+
+#payment{
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+.form-group-confimation{
+    display: flex;
+    flex-direction: column;
+    margin: 20px 50px
+}
+
+#payment label{
+    margin:5px 50px;
+}
+
+.payment{
+    padding-left: 100px;
+    width: 20px;
+}
+
+.form-group-confimation{
+    text-align: left;
+}
+
+.control-form-confirm-csv{
+    width: 100px;
+}
