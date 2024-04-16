@@ -1,5 +1,6 @@
 #alumni_profile {
   display: flex;
+  padding: 30px 20px;
 }
 
 #admin_details {
@@ -8,11 +9,14 @@
 
 #admin_image {
   width: 40%;
+  border-radius: 100%;
 }
 
 #admin_image img {
   width: 200px;
-
+  height: 200px;
+  border-radius: 100%;
+margin: auto;
 }
 
 .display_alumni_info {
@@ -20,7 +24,7 @@
 }
 
 .display_alumni_info_label {
-  width: 40%;
+  width: 20%;
 }
 
 #alumni_table {

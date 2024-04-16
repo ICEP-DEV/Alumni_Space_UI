@@ -2,9 +2,21 @@ import './Employment.css'
 import { Pie, Doughnut } from 'react-chartjs-2';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { CChart } from '@coreui/react-chartjs'
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import api from '../../../ModelData/Api';
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 function Employment() {
+    const [Qualifications, setQualifications] = useState([])
+    useEffect(() => {
+        axios.get(api + "get_qualification").then(respond => {
+            if (respond.data.result) {
+                console.log(respond.data.result)
+                setQualifications(respond.data.result)
+            }
+        })
+    }, [])
 
     const data = {
         labels: ["Jan", "Feb"],
@@ -15,9 +27,9 @@ function Employment() {
     }
 
     const qualification = {
-        labels: ["Diploma", "Advanced Diploma", "B-Tech", "Post Graduation", "Masters", "PHD"],
+        labels: Qualifications.map(value => { return value.qualification_type }),
         datasets: [{
-            data: [52, 40, 33, 50, 77, 99],
+            data: Qualifications.map(value => { return value.count_quali }),
             backgroundColor: ["red", "blue", "yellow", "orange", "green", "purple"]
         }]
     }
@@ -28,7 +40,7 @@ function Employment() {
             <div className='summary_results'>
                 <h2>Employment Statuses</h2>
                 <div className='each_results'>
-                    <div className='pie-display'>
+                    {/* <div className='pie-display'>
                         <Pie data={data} />
                     </div>
                     <div className='bar-display'>
@@ -46,9 +58,9 @@ function Employment() {
                             }}
                             labels="Qualifications"
                         />
-                    </div>
+                    </div> */}
                     <div className='info-display'>
-                        <tr className='results-info'>
+                        {/* <tr className='results-info'>
                             <td id='color_circle' style={{ backgroundColor: 'red' }}></td>&nbsp;
                             <td>Jan</td>
                             <td>52</td>
@@ -58,7 +70,7 @@ function Employment() {
                             <td id='color_circle' style={{ backgroundColor: 'blue' }}></td>&nbsp;
                             <td>Feb</td>
                             <td>40</td>
-                        </tr>
+                        </tr> */}
                     </div>
                 </div>
 
@@ -73,12 +85,12 @@ function Employment() {
                         <CChart
                             type="bar"
                             data={{
-                                labels: ["Diploma", "Advanced Diploma", "B-Tech", "Post Graduation", "Masters", "PHD"],
+                                labels: Qualifications.map(value => { return value.qualification_type }),
                                 datasets: [
                                     {
                                         label: 'Qualifications',
                                         backgroundColor: ["red", "blue", "yellow", "orange", "green", "purple"],
-                                        data: [52, 40, 33, 50, 77, 99],
+                                        data: Qualifications.map(value => { return value.count_quali }),
                                     },
                                 ],
                             }}
@@ -86,38 +98,14 @@ function Employment() {
                         />
                     </div>
                     <div className='info-display'>
-                        <tr className='results-info'>
-                            <td id='color_circle' style={{ backgroundColor: 'red' }}></td>&nbsp;
-                            <td>Diploma</td>
-                            <td>52</td>
-                        </tr>
-                        <br />
-                        <tr className='results-info'>
-                            <td id='color_circle' style={{ backgroundColor: 'blue' }}></td>&nbsp;
-                            <td>Advanced Diploma</td>
-                            <td>40</td>
-                        </tr><br />
-                        <tr className='results-info'>
-                            <td id='color_circle' style={{ backgroundColor: 'yellow' }}></td>&nbsp;
-                            <td>B-Tech</td>
-                            <td>33</td>
-                        </tr>
-                        <br />
-                        <tr className='results-info'>
-                            <td id='color_circle' style={{ backgroundColor: 'orange' }}></td>&nbsp;
-                            <td>Post Graduation</td>
-                            <td>50</td>
-                        </tr><br />
-                        <tr className='results-info'>
-                            <td id='color_circle' style={{ backgroundColor: 'green' }}></td>&nbsp;
-                            <td>Masters</td>
-                            <td>77</td>
-                        </tr><br />
-                        <tr className='results-info'>
-                            <td id='color_circle' style={{ backgroundColor: 'purple' }}></td>&nbsp;
-                            <td>PHD</td>
-                            <td>99</td>
-                        </tr>
+                        {Qualifications.map((quali, xid) => (
+                            <tr className='results-info' key={xid}>
+                                <td id='color_circle' style={{ backgroundColor: 'red' }}></td>&nbsp;
+                                <td>{quali.qualification_type}</td>
+                                <td>{quali.count_quali}</td>
+                            </tr>
+                        ))}
+
                     </div>
                 </div>
 

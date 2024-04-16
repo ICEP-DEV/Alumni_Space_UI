@@ -2,7 +2,8 @@ import './AlumniAttendance.css'
 import AlumniHeader from '../AlumniHeader/AlumniHeader'
 import Footer from '../../Footer/Footer'
 import axios from 'axios'
-import api from '../../ModelData/Api'
+import api from '../../ModelData/Api';
+import apifile from '../../ModelData/ApiFile';
 import NormalPopup from '../../Popups/NormalPopup'
 import { useLocation, useNavigate } from "react-router-dom";
 import { BsCalendar2CheckFill } from "react-icons/bs";
@@ -35,7 +36,7 @@ function AlumniAttendance() {
     }
 
     function addAttandance() {
-        if (IsAttand === undefined) {
+       /* if (IsAttand === undefined) {
             toast.warn("please state whether you going to attend or not", {
                 position: "top-center",
                 autoClose: 5000,
@@ -61,13 +62,54 @@ function AlumniAttendance() {
             });
             return;
         }
-        if (IsDonation === "true") {
+        if (IsDonation === true) {
             return setPaymentPopup(true)
+        }
+        else {
+            submitAttandance(IsAttand, IsDonation)
+        }*/
+        submitAttandance(IsAttand, IsDonation)
 
+    }
+
+    function submitAttandance(attandance, donation) {
+        var objectAttandance = {
+            isAttend: Boolean(attandance),
+            isDonated: Boolean(donation),
+            event_id: Attandance.event_id,
+            alumni_id: JSON.parse(localStorage.getItem('user_id'))
         }
-        else{
-            navigate('/alumni_events')
-        }
+        console.log(objectAttandance)
+        axios.post(api+"addAlumniEvent", objectAttandance).then(respond=>{
+            if(respond.data.success){
+                setPaymentPopup(false)
+                toast.success(respond.data.message, {
+                    position: "top-center",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                });
+                navigate('/alumni_events')
+                
+            }
+            else{
+                toast.error(respond.data.message, {
+                    position: "top-center",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                });
+                return;
+            }
+        })
     }
 
     function paymentMethod(payment) {
@@ -79,7 +121,6 @@ function AlumniAttendance() {
         else {
             setIsEft(true)
         }
-        console.log(payment)
     }
 
     function confirmPayment() {
@@ -154,8 +195,7 @@ function AlumniAttendance() {
                 return;
             }
         }
-
-        navigate('/alumni_events')
+        submitAttandance(IsAttand, IsDonation)
     }
     const popupView = <div className='view-eventview-event'>
         <div id='close-popup'><label id='x-cancel' onClick={() => setPaymentPopup(false)}>x</label></div>
@@ -166,7 +206,13 @@ function AlumniAttendance() {
                 <label>EFT<input type='radio' className='payment' onChange={(event) => paymentMethod(event.target.value)} name="payment" value="EFT" /></label>
             </div>
             {IsBank && <>
-                <h5>Use this accout for diposit <b>0012123456789</b></h5>
+                <h5>Use this accout for diposit </h5>
+                <p>Account holder: <b>Tshwane University of Technology</b></p>
+                <p>Account No: <b>0012123456789</b></p>
+                <p>Bank name: <b>ABSA</b></p>
+                <p>Reference: <b>Student number and Surname</b></p>
+                <p>SWIFT code: <b>ABSAZAJJCPT</b></p>
+                
             </>}
             {IsEft && <>
                 <div className='form-group-confimation'>
@@ -199,29 +245,6 @@ function AlumniAttendance() {
                     <label>CSV</label>
                     <input type='text' onChange={(event) => setCardCSV(event.target.value)} className='control-form-confirm-csv' />
                 </div>
-                {/* <div className='form-group-date-csv'>
-                    <span>
-                        <label>Expire Date</label>
-                        <select>
-                            <option disabled selected>Month</option>
-                            {MonthNo.map((month, xid) => (
-                                <option value={month} key={xid}>{month}</option>
-                            ))}
-                        </select>
-                        <select>
-                            <option disabled selected>Year</option>
-                            {YearNo.map((year, xid) => (
-                                <option value={year} key={xid}>{year}</option>
-                            ))}
-                        </select>
-
-                    </span>
-                    <span>
-                        <label>CSV</label>
-                        <input type='text' />
-                    </span>
-
-                </div> */}
             </>}
         </div>
         <button className='btn btn-primary' onClick={confirmPayment}>Confirm</button>
@@ -235,51 +258,51 @@ function AlumniAttendance() {
             <div className='section'>
                 <div className='view-confirm-event'>
                     {/* <div id='close-popup'><label id='x-cancel' onClick={() => setViewPopup(false)}>x</label></div> */}
-                    <div className='event-head'>
+                    <div id='event-head'>
                         <h3>{Attandance.eventName}</h3>
-                        <img src={Attandance.image} alt="event image" />
+                        <span className='event-image'><img src={apifile+Attandance.image} alt="event image" /></span>
                     </div>
 
                     <div className='display-form'>
-                        <label className='label-field'>Organazation/Company name </label>
-                        <label className='field-input'>{Attandance.organization}</label>
+                        <label className='label-field'>Organazation/Company name: </label>
+                        <label className='field-input'><b>{Attandance.organization}</b></label>
                     </div>
                     <div className='display-form'>
-                        <label className='label-field'>Nonation Fee </label>
-                        <label className='field-input'>R{Attandance.donationFee}</label>
+                        <label className='label-field'>Fee : </label>
+                        <label className='field-input'><b>R{Attandance.donationFee}</b></label>
                     </div>
                     <div className='display-form'>
-                        <label className='label-field'>Start Date and Time</label>
-                        <label className='field-input'>{Attandance.startDate} {Attandance.startTime}</label>
+                        <label className='label-field'>Start Date and Time : </label>
+                        <label className='field-input'><b>{Attandance.startDate} {Attandance.startTime}</b></label>
                     </div>
                     <div className='display-form'>
-                        <label className='label-field'>Start Date and Time</label>
-                        <label className='field-input'>{Attandance.endDate} {Attandance.endTime}</label>
+                        <label className='label-field'>Start Date and Time : </label>
+                        <label className='field-input'><b>{Attandance.endDate} {Attandance.endTime}</b></label>
                     </div>
                     <div className='display-form'>
-                        <label className='label-field'>Vanue</label>
-                        <label className='field-input'>{Attandance.vanue}</label>
+                        <label className='label-field'>Venue : </label>
+                        <label className='field-input'><b>{Attandance.venue}</b></label>
                     </div>
                     <div className='display-form'>
-                        <label className='label-field'>Description</label>
-                        <label className='field-input'>{Attandance.description}</label>
+                        <label className='label-field'>Description : </label>
+                        <label className='field-input'><b>{Attandance.description}</b></label>
                     </div>
                 </div>
                 <div className='attandance-option'>
                     <label className='label-attend'>Are you going to attande</label>
                     <span>
-                        <label><input type='radio' name='attand' value={true} onChange={(event) => setIsAttand(event.target.value)} /> Yes</label>
-                        <label><input type='radio' name='attand' value={false} onChange={(event) => setIsAttand(event.target.value)} /> No</label>
+                        <label><input type='radio' name='attand' value='true' onChange={() => setIsAttand(true)} /> Yes</label>
+                        <label><input type='radio' name='attand' value='false' onChange={() => setIsAttand(false)} /> No</label>
                     </span>
                 </div>
 
-                <div className='attandance-option'>
+                {/* <div className='attandance-option'>
                     <label className='label-attend'>Are your offering donation </label>
                     <span>
-                        <label><input type='radio' name='donation' value={true} onChange={(event) => setIsDonation(event.target.value)} /> Yes</label>
-                        <label><input type='radio' name='donation' value={false} onChange={(event) => setIsDonation(event.target.value)} /> No</label>
+                        <label><input type='radio' name='donation' value='true'  onChange={() => setIsDonation(true)} /> Yes</label>
+                        <label><input type='radio' name='donation' value='false' onChange={() => setIsDonation(false)} /> No</label>
                     </span>
-                </div>
+                </div> */}
                 <div className='attandance-option'>
                     <button className='btn btn-primary' onClick={addAttandance}>Submit</button>
                 </div>

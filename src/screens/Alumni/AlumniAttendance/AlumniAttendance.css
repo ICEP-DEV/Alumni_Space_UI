@@ -4,6 +4,19 @@
     font-weight: 500;
 } 
 
+#event-image {
+    margin: 20px 500px;
+    text-align: center;
+    align-items: center;
+}
+
+#event-head img{
+    width: 60%;
+    margin: auto;
+    text-align: center;
+    align-items: center;
+}
+
 .attandance-option .label-attend{
     width: 30%;
 }

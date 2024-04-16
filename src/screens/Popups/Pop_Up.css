@@ -1,5 +1,5 @@
 
-
+/*
 .register-popup{
     position: fixed;
     top: 0;
@@ -10,7 +10,7 @@
     align-items: center;
     z-index: 1;
 }
-
+*/
 .register-popup-inner{
     background-color: white;
     position: relative;

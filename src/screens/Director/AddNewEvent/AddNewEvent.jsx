@@ -55,6 +55,7 @@ function AddNewEvent() {
             headers: { 'content-type': 'multipart/form-data' },
         };
         axios.post(api + "addEvent", formData, config).then(respond => {
+            console.log(respond)
             if (respond.data.success) {
                 toast.success('🦄 Wow so easy!', {
                     position: "top-left",
@@ -82,7 +83,9 @@ function AddNewEvent() {
             }
         })
     }
-
+    const today = new Date();
+    const date = today.setDate(today.getDate()); 
+    const defaultValue = new Date(date).toISOString().split('T')[0] // yyyy-mm-dd
     return (
         <div className='content'>
             <ALumniHeader />
@@ -96,8 +99,9 @@ function AddNewEvent() {
                     <label>Company/Organizer name</label><br />
                     <input type="text" className="form-control add_event_input" onChange={(event) => setOrganization(event.target.value)} required />
                 </div>
+                
                 <div className="mb-3">
-                    <label>Donation fee</label><br />
+                    <label>Fee</label><br />
                     <input type="text" className="form-control add_event_input" onChange={(event) => setDonationFee(event.target.value)} required />
                 </div>
                 <div className="mb-3">
@@ -111,7 +115,7 @@ function AddNewEvent() {
                 <div className="mb-3">
                     <label className="form-label">Start Event</label><br />
                     <span id='time-date'>
-                        <input type='date' onChange={(event) => setStartDate(event.target.value)} id='date' />
+                        <input type='date' className="form-control" onChange={(event) => setStartDate(event.target.value)} id='date' defaultValue={defaultValue} />
                         <select id='time' onChange={(event) => setStartTime(event.target.value)}>
                             <option disabled selected>Time</option>
                             {TimeInterval.map((time, xid) => (
@@ -124,8 +128,8 @@ function AddNewEvent() {
                 <div className="mb-3">
                     <label className="form-label">End Event</label><br />
                     <span id='time-date'>
-                        <input type='date' onChange={(event) => setEndDate(event.target.value)} id='date' />
-                        <select id='time' onChange={(event) => setEndTime(event.target.value)}>
+                        <input type='date' className="form-control" onChange={(event) => setEndDate(event.target.value)} id='date' defaultValue={defaultValue}/>
+                        <select id='time' onChange={(event) => setEndTime(event.target.value)} >
                             <option disabled selected>Time</option>
                             {TimeInterval.map((time, xid) => (
                                 <option value={time}>{time}</option>

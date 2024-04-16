@@ -14,7 +14,7 @@ function Slides() {
         backgroundPosition: 'center',
         height: '90vh',
       }
-    const fadeImages = [{ name: image1 }, { name: image2 }, { name: image3 }];
+    const fadeImages = [ { name: image2 }, { name: image3 }];
     console.log(fadeImages)
     return (
         <div className="slide-container">

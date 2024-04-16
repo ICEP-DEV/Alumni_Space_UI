@@ -4,14 +4,14 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios'
 
-import ALumniHeader from '../DirectorHeader/DirectorHeader'
+import ALumniHeader from '../DirectorHeader/DirectorHeader';
 import './EventCeremony.css'
 import AddPopUp from '../../Popups/Popup'
 import NormalPopup from '../../Popups/NormalPopup';
 import eventImage from '../../../assets/amazon.png';
 import AllEvents from '../../ModelData/Events';
 import apifile from '../../ModelData/ApiFile';
-import api from '../../ModelData/Api';
+import api from '../../ModelData/Api'; 
 import { useNavigate } from 'react-router-dom';
 
 function EventCeremony() {
@@ -35,6 +35,7 @@ function EventCeremony() {
         axios.get(api + "getEvents").then(respond => {
             if (respond.data.success) {
                 setEvents(respond.data.result)
+                console.log(respond.data.result)
             }
             else {
 
@@ -54,8 +55,8 @@ function EventCeremony() {
             ...prevState,
             [name]: value
         }));
-
     }
+
     function displayAddPopUp() {
         setAddPopup(true);
         // Disables Background Scrolling whilst the popup is open
@@ -107,8 +108,8 @@ function EventCeremony() {
     function deleteEvent() {
         console.log(SelectedEvent.event_id)
         var data = {}
-        axios.put(api + "disable_event/"+SelectedEvent.event_id, data).then(respond=>{
-            if(respond.data.success){
+        axios.put(api + "disable_event/" + SelectedEvent.event_id, data).then(respond => {
+            if (respond.data.success) {
                 setDeleteEventPopup(false)
             }
 
@@ -133,32 +134,32 @@ function EventCeremony() {
         <div id='close-popup'><label id='x-cancel' onClick={() => setViewPopup(false)}>x</label></div>
         <div className='event-head'>
             <h3>{SelectedEvent.eventName}</h3>
-            <img src={SelectedEvent.image} alt="event image" />
+            <img src={apifile  +SelectedEvent.image} alt="event image" />
         </div>
 
         <div className='display-form'>
-            <label className='label-field'>Organazation/Company name </label>
-            <label className='field-input'>{SelectedEvent.organization}</label>
+            <label className='label-field'>Organazation/Company name :</label>
+            <label className='field-input'><b>{SelectedEvent.organization}</b></label>
         </div>
         <div className='display-form'>
-            <label className='label-field'>Nonation Fee </label>
-            <label className='field-input'>R{SelectedEvent.donationFee}</label>
+            <label className='label-field'>Nonation Fee :</label>
+            <label className='field-input'><b>R{SelectedEvent.donationFee}</b></label>
         </div>
         <div className='display-form'>
-            <label className='label-field'>Start Date and Time</label>
-            <label className='field-input'>{SelectedEvent.startDate} {SelectedEvent.startTime}</label>
+            <label className='label-field'>Start Date and Time :</label>
+            <label className='field-input'><b>{SelectedEvent.startDate} {SelectedEvent.startTime}</b></label>
         </div>
         <div className='display-form'>
-            <label className='label-field'>Start Date and Time</label>
-            <label className='field-input'>{SelectedEvent.endDate} {SelectedEvent.endTime}</label>
+            <label className='label-field'>Start Date and Time :</label>
+            <label className='field-input'><b>{SelectedEvent.endDate} {SelectedEvent.endTime}</b></label>
         </div>
         <div className='display-form'>
-            <label className='label-field'>Vanue</label>
-            <label className='field-input'>{SelectedEvent.vanue}</label>
+            <label className='label-field'>Vanue :</label>
+            <label className='field-input'><b>{SelectedEvent.venue}</b></label>
         </div>
         <div className='display-form'>
-            <label className='label-field'>Description</label>
-            <label className='field-input'>{SelectedEvent.description}</label>
+            <label className='label-field'>Description: </label>
+            <label className='field-input'><b>{SelectedEvent.description}</b></label>
         </div>
     </div>
 
@@ -310,8 +311,25 @@ function EventCeremony() {
                 <div className='display-events'>
                     {Events.map((event, xid) => (
                         <div className='poster' key={xid}>
-
-                            <div id='poster-image'><img src={event.image} alt='event image' /> </div>
+                            <div id='poster-image'><img src={apifile + event.image} alt='event image' /> </div>
+                            <div id='poster-desc'>
+                                <h5>{event.eventName}</h5>
+                                <div id='poster-date'>
+                                    <div id='date-organizer'>
+                                        <h6>{event.organization}</h6>
+                                        <label>{event.startDate} - {event.endDate}</label>
+                                    </div>
+                                    <div id='price'>
+                                        <h6>R{event.donationFee}</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id='poster-operation'>
+                                <button className='poster-operation btn btn-primary' onClick={() => viewEvent(event)}>View</button>
+                                <button className='poster-operation btn btn-success' onClick={() => editEventPopup(event)}>Edit</button>
+                                <button className='poster-operation btn btn-danger' onClick={() => deleteEventPopup(event)}>Delete</button>
+                            </div>
+                            {/* <div id='poster-image'><img src={apifile+event.image} alt='event image' /> </div>
                             <div id='poster-date'><h3>{event.startDate.toString().substring(0, 2)}</h3><h5>{event.startDate.toString().substring(3, 5)}</h5><h6>{event.startDate.toString().substring(6)}</h6></div>
                             <div id='poster-info'>
                                 <h3>{event.eventName}</h3>
@@ -321,7 +339,7 @@ function EventCeremony() {
                                 <label className='poster-operation' onClick={() => viewEvent(event)}>View</label>
                                 <label className='poster-operation' onClick={() => editEventPopup(event)}>Edit</label>
                                 <label className='poster-operation' onClick={() => deleteEventPopup(event)}>Delete</label>
-                            </div>
+                            </div> */}
                         </div>
                     ))}
                 </div>

@@ -14,5 +14,12 @@
 
 #time{
     margin-left: 10px;
-    height: 30px;
+    height: 40px;
+    width: 100px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+#time-date{
+    display: flex;
 }

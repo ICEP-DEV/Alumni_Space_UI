@@ -18,16 +18,47 @@ function AlmniEvents() {
 
     const [SelectedEvent, setSelectedEvent] = useState({})
     const [Events, setEvents] = useState([])
+    const [ProfileId, setProfileId] = useState(0)
 
     useEffect(() => {
+
+        var array = [{ id: 1, name: "test1" }, { id: 2, name: "test2" }, { id: 3, name: "test3" }, { id: 4, name: "test4" }];
+
+        var anotherOne = [{ id: 2, name: "test2" }, { id: 4, name: "test4" }];
+
+        var filteredArray = array.filter(function (array_el) {
+            return anotherOne.filter(function (anotherOne_el) {
+                return anotherOne_el.id == array_el.id;
+            }).length == 0
+        });
+        console.log(filteredArray);
         axios.get(api + "getEvents").then(respond => {
             if (respond.data.success) {
-                setEvents(respond.data.result)
+                var AllEvents = respond.data.result;
+                axios.get(api + "alumni_event_subscribe/" + JSON.parse(localStorage.getItem('user_id'))).then(respond => {
+                    if (respond.data.success) {
+                        var subsribedEvent = respond.data.result
+                        var filteredArray = AllEvents.filter(function (events) {
+                            return subsribedEvent.filter(function (subevent) {
+                                return subevent.event_id == events.event_id;
+                            }).length == 0
+                        });
+                        setEvents(filteredArray)
+                    }
+                    else {
+                        setEvents(AllEvents)
+                    }
+
+                })
+
+
+                //
             }
             else {
 
             }
         })
+
     }, [])
 
 
@@ -41,63 +72,74 @@ function AlmniEvents() {
         setViewPopup(true)
     }
 
-    function attendEvent(data){
-        navigate("/alumni_attendance", {state:data})
+    function attendEvent(data) {
+        navigate("/alumni_attendance", { state: data })
     }
 
     const popupView = <div className='view-eventview-event'>
-        <div id='close-popup'><label id='x-cancel' onClick={() => setViewPopup(false)}>x</label></div>
-        <div className='event-head'>
-            <h3>{SelectedEvent.eventName}</h3>
-            <img src={SelectedEvent.image} alt="event image" />
-        </div>
-
-        <div className='display-form'>
-            <label className='label-field'>Organazation/Company name </label>
-            <label className='field-input'>{SelectedEvent.organization}</label>
-        </div>
-        <div className='display-form'>
-            <label className='label-field'>Nonation Fee </label>
-            <label className='field-input'>R{SelectedEvent.donationFee}</label>
-        </div>
-        <div className='display-form'>
-            <label className='label-field'>Start Date and Time</label>
-            <label className='field-input'>{SelectedEvent.startDate} {SelectedEvent.startTime}</label>
-        </div>
-        <div className='display-form'>
-            <label className='label-field'>Start Date and Time</label>
-            <label className='field-input'>{SelectedEvent.endDate} {SelectedEvent.endTime}</label>
-        </div>
-        <div className='display-form'>
-            <label className='label-field'>Vanue</label>
-            <label className='field-input'>{SelectedEvent.venue}</label>
-        </div>
-        <div className='display-form'>
-            <label className='label-field'>Description</label>
-            <label className='field-input'>{SelectedEvent.description}</label>
-        </div>
+    <div id='close-popup'><label id='x-cancel' onClick={() => setViewPopup(false)}>x</label></div>
+    <div className='event-head'>
+        <h3>{SelectedEvent.eventName}</h3>
+        <img src={apifile  +SelectedEvent.image} alt="event image" />
     </div>
 
+    <div className='display-form'>
+        <label className='label-field'>Organazation/Company name :</label>
+        <label className='field-input'><b>{SelectedEvent.organization}</b></label>
+    </div>
+    <div className='display-form'>
+        <label className='label-field'>Nonation Fee :</label>
+        <label className='field-input'><b>R{SelectedEvent.donationFee}</b></label>
+    </div>
+    <div className='display-form'>
+        <label className='label-field'>Start Date and Time :</label>
+        <label className='field-input'><b>{SelectedEvent.startDate} {SelectedEvent.startTime}</b></label>
+    </div>
+    <div className='display-form'>
+        <label className='label-field'>Start Date and Time :</label>
+        <label className='field-input'><b>{SelectedEvent.endDate} {SelectedEvent.endTime}</b></label>
+    </div>
+    <div className='display-form'>
+        <label className='label-field'>Vanue :</label>
+        <label className='field-input'><b>{SelectedEvent.venue}</b></label>
+    </div>
+    <div className='display-form'>
+        <label className='label-field'>Description: </label>
+        <label className='field-input'><b>{SelectedEvent.description}</b></label>
+    </div>
+</div>
     return (
         <div className='content'>
-            <AlumniHeader /> 
+            <AlumniHeader />
             <NormalPopup trigger={ViewPopup} setTrigger={handleAddPopup}>{popupView}</NormalPopup>
             <div className='section'>
                 <div className='events'>
                     <div className='display-events'>
                         {Events.map((event, xid) => (
                             <div className='poster' key={xid}>
-                                <div id='poster-image'><img src={event.image} alt='event image' /> </div>
-                                <div id='poster-date'><h3>{event.startDate.toString().substring(0, 2)}</h3><h5>{event.startDate.toString().substring(3, 5)}</h5><h6>{event.startDate.toString().substring(6)}</h6></div>
-                                <div id='poster-info'>
-                                    <h3>{event.eventName}</h3>
-                                    <h5>{event.startTime} - {event.endTime} <span id='separator'></span> {event.venue}</h5>
+                                <div id='poster-image'><img src={apifile + event.image} alt='event image' /> </div>
+                                <div id='poster-desc'>
+                                    <h5>{event.eventName}</h5>
+                                    <div id='poster-date'>
+                                        <div id='date-organizer'>
+                                            <h6>{event.organization}</h6>
+                                            <label>{event.startDate} - {event.endDate}</label>
+                                        </div>
+                                        <div id='price'>
+                                            <h6>R{event.donationFee}</h6>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div id='poster-operation'>
-                                    <label className='poster-operation' onClick={() => viewEvent(event)}>View</label>
-                                    <label className='poster-operation' onClick={() => attendEvent(event)}>Attend</label>
-                               {/*  <label className='poster-operation' onClick={() => deleteEventPopup(event)}>Delete</label> */}
+                                    <button className='poster-operation btn btn-primary' onClick={() => viewEvent(event)}>View</button>
+                                    <button className='poster-operation btn btn-success' onClick={() => attendEvent(event)}>Attend</button>
                                 </div>
+
+                                {/* <div id='poster-operation'>
+                                    <label className='poster-operation' onClick={() => viewEvent(event)}>View</label>
+
+                                    <label className='poster-operation' onClick={() => attendEvent(event)}>Attend</label>
+                                </div> */}
                             </div>
                         ))}
                     </div>

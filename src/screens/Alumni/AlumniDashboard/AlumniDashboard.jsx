@@ -3,7 +3,7 @@ import AlumniHeader from '../AlumniHeader/AlumniHeader'
 import Footer from '../../Footer/Footer'
 import axios from 'axios'
 import api from '../../ModelData/Api'
-import { BsCalendar2CheckFill } from "react-icons/bs";
+import image from '../../../assets/amazon.png'
 import { useEffect, useState } from 'react';
 function DirectorDashboard() {
     var [NumberOfEventSubscribed, setNumberOfEventSubscribed] = useState(0)
@@ -11,21 +11,15 @@ function DirectorDashboard() {
     var [EventSubscribed, setEventSubscribed] = useState([])
     useEffect(() => {
         var user_id = Number(localStorage.getItem('user_id'))
-
-        console.log(user_id)
         axios.get(api + "getEvents").then(respond => {
-            var allEvents = respond.data.result
-            console.log(allEvents)
             setTotalNumberOfEvent(respond.data.result.length)
-            setEventSubscribed(allEvents.filter(values => {
-                console.log(values.alumni_id)
-                return values.alumni_id === user_id
-            }))
-            setNumberOfEventSubscribed(allEvents.filter(values => {
-                console.log(values.alumni_id)
-                return values.alumni_id === user_id
-            }).length)
-            console.log(EventSubscribed)
+        })
+        axios.get(api + "alumni_event_subscribe/" + user_id).then(respond => {
+            if (respond.data.success) {
+                setNumberOfEventSubscribed(respond.data.result.length)
+                setEventSubscribed(respond.data.result)
+                console.log(respond.data.result)
+            }
         })
     }, [])
 
@@ -63,6 +57,39 @@ function DirectorDashboard() {
                                 <BsCalendar2CheckFill />
                             </div> */}
                         </div>
+                    </div>
+                </div>
+                <div className=''>
+                    <h4>Subscribed event ({NumberOfEventSubscribed})</h4>
+                    <div>
+                        <table id='event_table'>
+                            <thead>
+                                <th>Event Name</th>
+                                <th>Organization</th>
+                                <th>Donation Fee(paid)</th>
+                                <th>Attend</th>
+                                <th>Description</th>
+                            </thead>
+                            <tbody>
+                                {EventSubscribed.map((event, xid) => (
+                                    <tr key={xid}>
+                                        <td>{event.eventName}</td>
+                                        <td>{event.organization}</td>
+                                        <td>R{event.donationFee}<label> ({event.isAttend == 1 && <>Yes</>}</label>
+                                            <label>{event.isAttend == 0 && <>No</>}</label>)
+                                        </td>
+                                        <td><label>{event.isDonated == 1 && <>Yes</>}</label>
+                                            <label>{event.isDonated == 0 && <>No</>}</label>
+                                        </td>
+                                        <td>{event.description}</td>
+
+
+
+                                    </tr>
+                                ))}
+
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>

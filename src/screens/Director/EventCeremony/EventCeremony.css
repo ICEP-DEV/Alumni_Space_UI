@@ -36,36 +36,24 @@
     overflow-y: scroll;
 }
 
-.display-events{
-    width: 80%;
+.display-events {
+    width: 90%;
     margin: auto;
     margin-top: 50px;
+    display: flex;
+
 }
 
 
 .poster {
-    display: flex;
-    border-bottom: 2px solid gray;
-    padding: 2px;
-    width: 100%;
+    margin: 20px;
+    width: 30%;
+    border-radius: 12px;
+    background-color: rgba(61, 58, 58, 0.767);
+
 }
 
-.poster:hover{
-    background-color: rgba(128, 128, 128, 0.705);
-    color: white;
-}
-
-#poster-image{
- width: 15%;
- text-align: center;
- margin: auto;
-}
-
-#poster-image img{
-    width: 150px;
-    height: 100px;
-
-   }
+/*
 
 #poster-date {
     border: 2PX solid grey;
@@ -74,82 +62,126 @@
     background-color: rgba(0, 183, 255, 0.438);
     width: 15%;
     margin: auto;
-   border-bottom: none;
-   border-top: none;
+    border-bottom: none;
+    border-top: none;
 }
 
-#poster-info{
+#poster-info {
     margin: 20px;
     width: 50%;
     margin: auto;
 }
 
-#separator{
+#separator {
     margin: 0 10px;
     border: 2px solid black;
 }
 
-#poster-operation{
+
+
+
+.display-form {
     display: flex;
-    text-align: center;
-    justify-content: center;
+    margin: 10px;
+
 }
 
-.poster-operation{
-    margin: 50px 10px;
+.label-field {
+    width: 40%;
 }
 
-#close-popup{
+.field-input {
+    width: 60%;
+    font-weight: 500;
+}
+
+.btn-operation {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-cancel-delete {
+    background-color: rgba(0, 0, 0, 0.384);
+
+}
+
+.btn-delete {
+    width: 200px;
+    border-radius: 12px;
+}
+*/
+
+.event-head {
+    display: flex;
+    justify-content: space-between;
+}
+
+.event-head img {
+    width: 300px;
+    height: 250px;
+}
+
+.edit-eventedit-event {
+    height: 80vh;
+    overflow-y: auto;
+}
+
+#close-popup {
     text-align: right;
 }
 
-#x-cancel{
+#x-cancel {
     background-color: rgb(255, 51, 0);
     padding: 5px;
     font-size: 2em;
 }
 
-.event-head{
+
+#poster-image {
+    text-align: center;
+    margin: auto;
+    width: 100%;
+}
+
+#poster-image img {
+    width: 100%;
+    height: 40vh;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+#poster-image img:hover{
+    -ms-transform: scale(1.1); /* IE 9 */
+    -webkit-transform: scale(1.1); /* Safari 3-8 */
+    transform: scale(1.1); 
+  }
+
+#poster-desc{
+    background-color: rgba(61, 58, 58, 0.767);
+    color: white;
+    width: 100%;
+    height: 30vh;
+    text-align: center;
+}
+
+#poster-desc h5{
+    text-align: center;
+}
+
+#poster-date{
     display: flex;
-    justify-content: space-between;
+    margin: 50px 20px;
 }
 
-.event-head img{
-    width: 200px;
-    height: 150px;
+#date-organizer{
+    text-align: left;
+    width: 75%;
 }
 
-.display-form{
+#price{
+    text-align: right;
+}
+
+#poster-operation{
     display: flex;
-    margin: 10px;
-    
-}
-
-.label-field{
-    width: 40%;
-}
-
-.field-input{
-    width: 60%;
-    font-weight: 500;
-}
-
-.btn-operation{
-    display: flex;
-    justify-content: space-between;
-}
-
-.btn-cancel-delete{
-    background-color: rgba(0, 0, 0, 0.384);
-    
-}
-
-.btn-delete{
-    width: 200px;
-    border-radius: 12px;
-}
-
-.edit-eventedit-event{
-    height: 80vh;
-    overflow-y: auto;
 }
